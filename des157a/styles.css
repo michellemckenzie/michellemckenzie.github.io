@@ -53,16 +53,7 @@ main h2{
 }
 
 #container{
-    max-width: 1366px;
-    min-width: 800px;
-    margin-top: 10px;
-    display: grid;
-    place-content: center;
-
-    /* margin-left: 133px;
-    margin-right: 133px; */
-
-    font-family: "Quicksand";
+ 
 }
 
 header{
@@ -73,6 +64,17 @@ header{
 body {
     color: #edded9;
     background-color: white;
+
+    max-width: 1366px;
+    min-width: 800px;
+    margin-top: 10px;
+    display: grid;
+    place-content: center;
+
+    /* margin-left: 133px;
+    margin-right: 133px; */
+
+    font-family: "Quicksand";
 }
 
 
