@@ -13,7 +13,9 @@ main h2{
 
 main a{
     text-decoration: none;
-    color: #E6D3D0;
+    color: #304b40;
+
+    font-weight: 600;
 }
 
 footer a{
@@ -29,8 +31,8 @@ main h2{
 }
 
 #container{
-    display: grid;
-    place-content: center;
+    max-width: 1366px;
+    min-width: 900px;
 }
 
 
@@ -46,17 +48,20 @@ header{
 }
 
 body {
-    color: #edded9;
+    color: #304b40;
     background-color: white;
     margin-top: 10px;
     font-family: "Quicksand";
+
+    display: grid;
+    place-content: center;
 }
 
 
 #banner{
     width: 1100px;
     height: 250px;
-    background-color: #f2ebe9;
+    background-color: #e6f1f5;
     border-radius: 20px;
     cursor: pointer;
     position: relative;
@@ -78,20 +83,20 @@ main section{
 }
 
 main a:hover {
-    background-color: #edded9;
-    color: #264143;
+    text-decoration: underline;
 }
 
 .column:hover{
-    box-shadow: 0px 5px 15px #304b40;
+    box-shadow: 10px 10px 0px #506369;
 }
 
 
 .column{
     height: 270px;
     border-radius: 15px;
-    background-color: #506369;
+    background-color: #e8d3d0;
     padding: 25px;
+    font-size: 17px;
 }
 
 #column2 li{
@@ -210,8 +215,24 @@ footer{
     z-index: 1;
 }
 
-.flower-head:hover > .flower-center{
+#flower-head-1:hover > #flower-center-1{
     background-color: #6f37b3;
+}
+
+#flower-head-2:hover > #flower-center-2{
+    background-color: brown;
+}
+
+#flower-head-3:hover > #flower-center-3{
+    background-color: #304b40;
+}
+
+#flower-head-4:hover > #flower-center-4{
+    background-color: #84ab32;
+}
+
+#flower-head-5:hover > #flower-center-5{
+    background-color: #34dbdb;
 }
 
 .petal-1, .petal-2, .petal-3, .petal-4, .petal-5{
