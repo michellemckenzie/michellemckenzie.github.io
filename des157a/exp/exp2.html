@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Festive&family=Indie+Flower&family=Lobster&family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1> Experiment 2</h1>
+
+    <script>
+        // This program asks a user to input a number from 0-5 and then the program will select hardcoded values from an array to change the title's font family and color
+
+        var colors = ["red","darkolivegreen","green","cadetblue","purple","black"];
+        var fonts = ["Pacifico","Permanent Marker", "Abril Fatface", "Festive", "Indie Flower", "Lobster"];
+
+        var num = prompt("Enter a number from 0 to 5");
+        var runChangeScreen = checkInput(num);
+        changeScreen(runChangeScreen, num);
+
+        function checkInput(index){
+            var acceptable = false;
+
+            if(num < 0 || num > 5){
+                var errorMessage = document.createElement('p');
+                var errorSentence = document.createTextNode('Looks like you entered a number out of bounds! Can\'t do fun stuff now :-(');
+                errorMessage.appendChild(errorSentence);
+                document.querySelector('body').appendChild(errorMessage);
+            }
+            else{
+                acceptable = true;
+            }
+            return acceptable;
+        }
+
+        function changeScreen(runnable, index){
+            if (runnable){
+                var title = document.querySelector("h1");
+                title.style.color= colors[index];
+                title.style.fontFamily = fonts[index];
+                title.style.fontSize = "70px";
+            }
+        }
+    </script>
+</body>
+</html>

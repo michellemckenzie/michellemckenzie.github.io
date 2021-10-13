@@ -23,8 +23,12 @@ footer a{
     margin-top: 0px;
 }
 main h2{
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+main ul{
+    margin-top: 5px;
 }
 
 #container{
