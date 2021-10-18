@@ -19,7 +19,7 @@ h2{
 
 h3{
     font-size: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 5px;
 }
 
@@ -27,7 +27,7 @@ date{
     margin-bottom: 20px;
 }
 
-h2, h3, date{
+h2, date{
     font-family: 'Times New Roman', Times, serif;
     display: grid;
     place-content: center;
