@@ -12,11 +12,15 @@
     let verb; //input 4
     let noun; //input 5
     let number; //input 6
+    let bClicked = false;
 
     bButton.addEventListener('click', function(){
-        currentPage.src = "images/sushi.png";
-        currentPage.alt = "sushi form";
-        form.style.display = "block";
+        if (bClicked == false){
+            currentPage.src = "images/sushi.png";
+            currentPage.alt = "sushi form";
+            form.style.display = "block";
+            bClicked = true;
+        }
     })
 
 
@@ -126,6 +130,5 @@
 
         document.getElementById('sushiItem').textContent = `${number}x ${adj2} ${verb} ${noun} @3.99`;
     }
-
 }());
 

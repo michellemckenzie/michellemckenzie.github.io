@@ -2,13 +2,14 @@ body{
     font-family: "Gaegu";
     display: grid;
     place-content: center;
+    margin: 0px;
+}
 
+#centerConsole{
     max-width: 1366px;
     max-height: 768px;
     padding: 20px;
     box-sizing: content-box;
-
-    margin: 0px;
 }
 
 footer{
