@@ -14,46 +14,85 @@
     let number; //input 6
 
     bButton.addEventListener('click', function(){
-        currentPage.src = "images/colorfulSushi.png";
+        currentPage.src = "images/sushi.png";
+        currentPage.alt = "sushi form";
         form.style.display = "block";
-        
     })
 
 
     //this will change the image of the screen depending on what input box the user is currently hovering over
     for (let i = 0; i < userInput.length; i++){
-        // userInput[i].addEventListener('mouseover', function(){
-        //     let currentId = this.id;
+        userInput[i].addEventListener('mouseover', function(){
+            let currentId = this.id;
+            let label;
 
-        //     if (currentId == 'adj1'){
-        //         currentPage.src = "images/input1.png";
-        //         currentPage.alt = "hovering on input1";
-        //     }
-        //     else if (currentId == 'celebrity'){
-        //         currentPage.src = "images/input2.png";
-        //         currentPage.alt = "hovering on input2";
-        //     }
-        //     else if (currentId == 'adj2'){
-        //         currentPage.src = "images/input3.png";
-        //         currentPage.alt = "hovering on input3";
-        //     }
-        //     else if (currentId == 'verb'){
-        //         currentPage.src = "images/input4.png";
-        //         currentPage.alt = "hovering on input4";
-        //     }   
-        //     else if (currentId == 'noun'){
-        //         currentPage.src = "images/input5.png";
-        //         currentPage.alt = "hovering on input5";
-        //     }
-        //     else if (currentId == 'number'){
-        //         currentPage.src = "images/input6.png";
-        //         currentPage.alt = "hovering on input6";
-        //     }
-        // });
-        //change the image back to an unselected view
-        // userInput[i].addEventListener('mouseout', function(){
-        //     currentPage.src = "images/sushi.png";
-        // })
+            if (currentId == 'adj1'){
+                label = document.getElementById('input1');
+                label.style.fontWeight = "700";
+                label.style.color = "red";
+            }
+            else if (currentId == 'celebrity'){
+                label = document.getElementById('input2');
+                label.style.fontWeight = "700";
+                label.style.color = "red";
+            }
+            else if (currentId == 'adj2'){
+                label = document.getElementById('input3');
+                label.style.fontWeight = "700";
+                label.style.color = "red";
+            }
+            else if (currentId == 'verb'){
+                label = document.getElementById('input4');
+                label.style.fontWeight = "700";
+                label.style.color = "red";
+            }   
+            else if (currentId == 'noun'){
+                label = document.getElementById('input5');
+                label.style.fontWeight = "700";
+                label.style.color = "red";
+            }
+            else if (currentId == 'number'){
+                label = document.getElementById('input6');
+                label.style.fontWeight = "700";
+                label.style.color = "red";
+            }
+        });
+        // change the image back to an unselected view
+        userInput[i].addEventListener('mouseout', function(){
+            let currentId = this.id;
+            let label;
+
+            if (currentId == 'adj1'){
+                label = document.getElementById('input1');
+                label.style.fontWeight = "400";
+                label.style.color = "black";
+            }
+            else if (currentId == 'celebrity'){
+                label = document.getElementById('input2');
+                label.style.fontWeight = "400";
+                label.style.color = "black";
+            }
+            else if (currentId == 'adj2'){
+                label = document.getElementById('input3');
+                label.style.fontWeight = "400";
+                label.style.color = "black";
+            }
+            else if (currentId == 'verb'){
+                label = document.getElementById('input4');
+                label.style.fontWeight = "400";
+                label.style.color = "black";
+            }   
+            else if (currentId == 'noun'){
+                label = document.getElementById('input5');
+                label.style.fontWeight = "400";
+                label.style.color = "black";
+            }
+            else if (currentId == 'number'){
+                label = document.getElementById('input6');
+                label.style.fontWeight = "400";
+                label.style.color = "black";
+            }
+        })
     }
     
 

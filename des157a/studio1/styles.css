@@ -80,10 +80,8 @@ input:focus {outline: 1px transparent solid;}
 }
 
 
-#xButton:hover { background-color: #5cbbff; }
-#yButton:hover { background-color: #ff5c6c; }
-#aButton:hover { background-color: #ffd35c; }
-#bButton:hover { background-color: #5fff5c; }
+#aButton:hover { background-color: #ffd35c;  cursor: pointer;}
+#bButton:hover { background-color: #5fff5c;  cursor: pointer;}
 
 #xButton, #yButton, #aButton, #bButton {
     position: absolute;
@@ -100,7 +98,6 @@ input:focus {outline: 1px transparent solid;}
 
     display: grid;
     place-content: center;
-    cursor: pointer;
 
     box-shadow: 0px 7px 10px black;
 }
