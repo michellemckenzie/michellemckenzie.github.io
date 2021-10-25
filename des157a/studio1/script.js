@@ -70,7 +70,8 @@
         console.log(`The words are: ${adj1}, ${celebrity}, ${adj2}, ${verb}, ${noun}, ${number}`);
 
         form.style.display = "none";
-        currentPage.src = "images/story.gif";
+        currentPage.src = "images/madlibsStory.png";
+        currentPage.alt = "madlibs story";
         document.getElementById('lastPanel').style.display = 'block';
         createStory();
     });
