@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle's Madlibs</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel ="stylesheet" href = "styles.css">
+
+    <script src = "script.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>madlibs</header>
+
+        <div id = "screen">
+            <img src = "images/welcomeScreen.png" id = "currentPage" alt = "welcome screen">
+
+            <form id = "myForm">
+                    <label for = "adj1" id = "input1"> Adjective:</label>
+                    <input type = "text" id = "adj1" autocomplete = "off" required>
+                    <div id = "input1hover"></div>
+
+                    <label for = "celebrity" id = "input2"> Celebrity: </label>
+                    <input type = "text" id = "celebrity" autocomplete = "off" required>
+
+                    <label for = "adj2" id = "input3"> Adjective: </label>
+                    <input type = "text" id = "adj2" autocomplete = "off" required>
+
+                    <label for = "verb" id = "input4"> Verb: </label>
+                    <input type = "text" id = "verb" autocomplete = "off" required>
+
+                    <label for = "noun" id = "input5"> Noun: </label>
+                    <input type = "text" id = "noun" autocomplete = "off" required>
+
+                    <label for = "number" id = "input6"> Number: </label>
+                    <input type = "text" id = "number" autocomplete = "off" required>
+            </form>
+
+            <div id = "lastPanel">
+                <p id = "story">
+                </p>
+    
+                <h1>receipt</h1>
+                <h2 id = "total"> total: </h2>
+                <p id = "mochi"> 3x strawberry mochi @ 1.99</p>
+                <p id = "tea"> 2x green tea @ 3.00</p>
+                <p id = "sushiItem"> @ 3.99</p>
+                <h2 id = "amount"></h2>
+                <h3> thank you and come again! :)</h3>
+            </div>
+        
+        </div>
+
+        <div id = "leftJoystick"></div>
+        <div id = "arrowLocation">
+            <div id = "topArrow"></div>
+            <div id = "leftArrow"></div>
+            <div id = "rightArrow"></div>
+            <div id = "bottomArrow"></div>
+        </div>
+
+
+        <div id = "buttonLocation">
+            <button id = "xButton">X</button>
+            <button id = "yButton">Y</button>
+            <button type = "submit" form = "myForm" id = "aButton">A</button>
+            <button id = "bButton">B</button>
+        </div>
+        <div id = "rightJoystick"></div>
+
+    </main>
+    
+    <footer>
+        <a href="mailto:&#109;&#108;&#109;&#099;&#107;&#101;&#110;&#122;&#105;&#101;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email Me</a>
+
+        <a href="https://validator.w3.org/check?uri=https://michellemckenzie.github.io/des157a">Valid HTML 5</a>
+
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    </footer>
+</body>
+</html>

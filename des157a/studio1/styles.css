@@ -1,0 +1,277 @@
+body{
+    font-family: "Gaegu";
+    display: grid;
+    place-content: center;
+
+    max-width: 1366px;
+    max-height: 768px;
+    padding: 20px;
+    box-sizing: content-box;
+
+    margin: 0px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header{
+    margin: 0px;
+    color: white;
+    position: absolute;
+    left: 595px;
+    top: 5px;
+    font-size: 40px;
+}
+
+main{
+    width: 1300px;
+    height: 660px;
+    background-color: rgb(78, 76, 76);
+    border-radius: 90px;
+
+    position: relative;
+    display: grid;
+    place-content: center;
+
+    margin-bottom: 20px;
+}
+
+form{
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+
+label,input {display: block;}
+label {font-size: 25px;}
+
+input {
+    border: 0;
+    font-size: 20px;
+    font-family: "Gaegu";
+    background: transparent;
+}
+
+input:focus {outline: 1px transparent solid;}
+
+#input1hover:hover{
+    width: 120px;
+    height: 80px;
+    background-color: #afbc8f;
+}
+
+#screen{
+    width: 1000px;
+    height: 560px;
+    background-color: white;
+    position: relative;
+}
+
+#buttonLocation{
+    width: 100px;
+    height: 120px;
+
+    position: absolute;
+    right: 25px;
+    top: 120px;
+}
+
+
+#xButton:hover { background-color: #5cbbff; }
+#yButton:hover { background-color: #ff5c6c; }
+#aButton:hover { background-color: #ffd35c; }
+#bButton:hover { background-color: #5fff5c; }
+
+#xButton, #yButton, #aButton, #bButton {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+
+    border-style: none;
+
+    font-weight: 700;
+    font-size: 25px;
+
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+
+    box-shadow: 0px 7px 10px black;
+}
+
+#xButton {left: 30px;}
+#yButton {top: 40px;}
+#bButton {left: 30px; bottom: 0px;}
+#aButton {right: 0px; top: 40px;}
+
+
+#leftJoystick, #rightJoystick{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    box-shadow: 0px 7px 10px black;
+}
+
+#leftJoystick { left: 25px; top: 150px;}
+#rightJoystick {right: 25px; top: 350px;}
+
+#arrowLocation{
+    position: absolute;
+    width: 100px;
+    height: 120px;
+
+    bottom: 200px;
+    left: 25px;
+}
+
+#topArrow, #rightArrow, #leftArrow, #bottomArrow{
+    height:40px;
+    width: 25px;
+    background-color: white;
+    position: absolute;
+}
+
+#topArrow { left: 38px;}
+#rightArrow{ right: 0px; top: 40px;}
+#leftArrow{ top: 40px;}
+#bottomArrow{ bottom: 0px; left: 38px; }
+
+#leftArrow, #rightArrow{
+    box-shadow: 7px 0px 10px black;
+    transform: rotate(90deg);
+}
+
+#topArrow, #bottomArrow{
+    box-shadow: 0px 7px 10px black;
+}
+
+
+#starsticker{
+    width: 130px;
+    height: 130px;
+    z-index: 1;
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+
+
+#currentPage{
+    height: 100%;
+    width: 100%;
+}
+
+
+#input1, #input2, #input3, #input4, #input5, #input6, #adj1, #celebrity, #adj2, #verb, #noun, #number{
+    position: absolute;
+}
+
+#input1 {top: 40px; left: 105px;}
+#adj1{
+    top: 78px;
+    left: 102px;
+    width: 170px;
+    height: 30px;
+}
+
+#input2 {left: 440px; top: 23px;}
+#celebrity{
+    top: 58px;
+    left: 443px;
+    height: 30px;
+    width: 150px;
+}
+
+#input3 { top: 35px; left: 740px;}
+#adj2{
+    top: 68px;
+    left: 737px;
+    height:28px;
+    width: 142px;
+}
+
+#input4 {top: 295px; left: 75px;}
+#verb{
+    top: 327px;
+    left: 75px;
+    height: 33px;
+    width: 155px;
+}
+
+#input5 {top: 315px; left: 415px;}
+#noun{
+    top: 348px;
+    left: 413px;
+    height: 30px;
+    width: 140px;
+
+}
+
+#input6 {top: 303px; left: 790px;}
+#number{
+    top: 335px;
+    left: 805px;
+    height: 30px;
+    width: 50px;
+}
+
+
+#lastPanel{
+    display: none;
+}
+
+#story{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 350px;
+    color: white;
+    font-size: 21px;
+}
+
+h1{
+    color: black;
+    position: absolute;
+    top: 70px;
+    right: 225px;
+    font-size: 35px;
+}
+
+h2{
+    position: absolute;
+    bottom: 190px;
+    font-size: 30px;
+}
+
+#total{
+    right: 280px;
+}
+
+#amount{
+    left: 750px;
+}
+
+#sushiItem, #mochi, #tea{
+    position: absolute;
+    left: 570px;
+    font-size: 25px;
+}
+
+#mochi {top:135px;}
+#tea {top: 170px;}
+#sushiItem {top: 205px; max-width: 300px;}
+
+h3{
+    position: absolute;
+    left: 615px;
+    top: 360px;
+    font-size: 18px;
+}
