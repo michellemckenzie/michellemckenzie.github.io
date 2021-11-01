@@ -71,3 +71,15 @@ footer{
     background-color: #d9e4f5;
     background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
 }
+
+
+#polaroid{
+    width: 70%;
+    height:70%;
+    margin: 0px;
+}
+figcaption{
+    display: block;
+}
+
+
