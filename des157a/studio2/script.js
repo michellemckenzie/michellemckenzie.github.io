@@ -2,6 +2,7 @@
     'use strict;'
     console.log("reading js now");
 
+    //these will grab the id of the div that is overlaid on each photo
     let photo1 = document.getElementById("photo1");
     let photo2 = document.getElementById("photo2");
     let photo3 = document.getElementById("photo3");
@@ -11,6 +12,7 @@
     let photo7 = document.getElementById("photo7");
     let photo8 = document.getElementById("photo8");
 
+    //these event listeners are watching for the mouse to hover over a div to create animations and overlays
     photo1.addEventListener("mouseover", addanimation1);
     photo1.addEventListener("mouseout", removeanimation1);
 
@@ -36,19 +38,31 @@
     photo8.addEventListener("mouseout", removeanimation8);
 
     function addanimation1(){
+        //this applies an animation to a line which will slowly get longer until it reaches the middle of a body of text
         document.getElementById("line1").style.animation = "line1appears 2s";
+        //this is here so that after the animation has completed, the line will stay at this width
         document.getElementById("line1").style.width = "250px";
 
+        //show the overlay text for the polaroid that is currently hovered on
         document.getElementById("story1").style.visibility = "visible";
+        //apply an animation to the story so that it will slowly come in
         document.getElementById("story1").style.animation = "textfade 3s";
     }
 
     function removeanimation1(){
+        //have the line draw back to the origin
         document.getElementById("line1").style.animation = "line1disappears 1s";
+        //once the line disappears, make sure that the line doesn't appear again until the photo is hovered on
         document.getElementById("line1").style.width = "0px";
+        //hide the overlay
         document.getElementById("story1").style.visibility = "hidden";
+        //remove the animation because we want the photo to immediately disappear. This is done so because if the user quickly moves to another image and their overlay appears in the same spot, we don't want texts overlapping each other at all, even if it's brief. We want each overlay to have their own spot once its their time.
         document.getElementById("story1").style.animation = "";
     }
+
+    /*
+    All of the functions perform the exact same thing, however they had to be divided up because they have different widths that they need to animate out to, and stay at.
+    */
 
     function addanimation2(){
         document.getElementById("line2").style.animation = "line2appears 2s";
