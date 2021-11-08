@@ -8,11 +8,20 @@ body{
 #container{
     max-width: 1366px;
     max-height: 768px;
-    box-sizing: content-box;
     position: relative;
 
     display: flex;
     flex-direction: row;
+}
+
+footer{
+    position: absolute;
+    bottom: 20px;
+    left: 370px;
+}
+ 
+footer a{
+    margin-left: 100px;
 }
 
 
