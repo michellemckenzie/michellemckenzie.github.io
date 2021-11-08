@@ -1,0 +1,267 @@
+body{
+    font-family: "Libre Baskerville";
+    display: grid;
+    place-content: center;
+    margin: 0px;
+}
+
+#container{
+    max-width: 1366px;
+    max-height: 768px;
+    box-sizing: content-box;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+h1{
+    position: absolute;
+    left: 542px;
+    font-size: 60px;
+    margin: 0px;
+    top: 50px;
+}
+
+p{
+    margin: 0px;
+}
+
+#photo1 {left: 295px; top: 103px;}
+
+#photo2{left: 485px; top: 143px;}
+
+#photo3{left: 660px; top: 165px;}
+
+#photo4{left: 928px; top: 100px;}
+
+#photo5{left: 275px; bottom: 95px;}
+
+#photo6{left:460px; bottom: 145px;}
+
+#photo7{left: 738px; bottom: 115px;}
+
+#photo8{left:930px; bottom: 80px;}
+
+#photo1, #photo2, #photo4, #photo5, #photo7, #photo8{
+    position: absolute;
+    height: 255px;
+    width: 150px;
+}
+
+#photo3, #photo6{
+    position: absolute;
+    height: 170px;
+    width: 235px;
+}
+
+#photo1:hover, #photo2:hover, #photo3:hover, #photo4:hover, #photo5:hover, #photo6:hover, #photo7:hover, #photo8:hover{
+    cursor: pointer;
+}
+
+#photo1:hover p, #photo2:hover p, #photo3:hover p, #photo4:hover p, #photo5:hover p, #photo6:hover p, #photo7:hover p, #photo8:hover p{
+    visibility: visible;
+    animation: textfade 2s;
+}
+
+@keyframes textfade {
+    from {
+        opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+}
+
+#photo5 p, #photo6 p, #photo7 p, #photo8 p{
+    position: absolute;
+    bottom: 0px;
+}
+
+#photo3 p, #photo6 p{
+    margin-left: 70px;
+    visibility: hidden;
+}
+
+#photo1 p, #photo2 p, #photo4 p, #photo5 p, #photo7 p, #photo8 p{
+    margin-left: 25px;
+    visibility: hidden;
+}
+
+
+
+#line1, #line2, #line3, #line4, #line5, #line6, #line7, #line8{
+    position: absolute;
+    background-color: black;
+    height: 2px;
+}
+
+#line1{
+    top: 350px;
+    right: 990px;
+}
+
+#line2{
+    top: 390px;
+    right: 800px;
+}
+
+#line3{
+    left: 885px;
+    top: 280px;
+}
+
+#line4{
+    left: 1010px;
+    top: 350px;
+}
+
+#line5{
+    bottom: 130px;
+    right: 1015px;
+}
+
+#line6{
+    width: 0px;
+    top: 520px;
+    left: 685px;
+}
+
+#line7{
+    bottom: 150px;
+    left: 820px;
+}
+
+#line8{
+    bottom: 118px;
+    left: 1010px;
+}
+
+@keyframes line1appears{
+    from {width:0px;}
+    to {width:250px;}
+}
+
+@keyframes line1disappears{
+    from {width:250px;}
+    to {width:0px;}
+}
+
+@keyframes line2appears{
+    from {width:0px;}
+    to {width:450px;}
+}
+
+@keyframes line2disappears{
+    from {width:450px;}
+    to {width:0px;}
+}
+
+@keyframes line3appears{
+    from {width:0px;}
+    to {width:310px;}
+}
+
+@keyframes line3disappears{
+    from {width:310px;}
+    to {width:0px;}
+}
+
+@keyframes line4appears{
+    from {width:0px;}
+    to {width:190px;}
+}
+
+@keyframes line4disappears{
+    from {width:190px;}
+    to {width:0px;}
+}
+
+@keyframes line5appears{
+    from {width:0px;}
+    to {width:230px;}
+}
+
+@keyframes line5disappears{
+    from {width:230px;}
+    to {width:0px;}
+}
+
+@keyframes line6appears{
+    from {height:0px;}
+    to {height:100px;}
+}
+
+@keyframes line6disappears{
+    from {height:100px;}
+    to {height:0px;}
+}
+
+@keyframes line7appears{
+    from {width:0px;}
+    to {width:370px;}
+}
+
+@keyframes line7disappears{
+    from {width:370px;}
+    to {width:0px;}
+}
+
+@keyframes line8appears{
+    from {width:0px;}
+    to {width:180px;}
+}
+
+@keyframes line8disappears{
+    from {width:180px;}
+    to {width:0px;}
+}
+
+#story1, #story2, #story3, #story4, #story5, #story6, #story7, #story8{
+    position: absolute;
+    width: 210px;
+    font-size: 15px;
+    visibility: hidden;
+}
+
+#story1{
+    left: 45px;
+    top: 150px;
+}
+
+#story2{
+    top: 240px;
+    left: 45px;
+}
+
+#story3{
+    right: 40px;
+    top: 135px;
+}
+
+#story4{
+    right: 40px;
+    top: 185px;
+}
+
+#story5{
+    left: 37px;
+    bottom: 145px;
+}
+
+#story6{
+    bottom: 70px;
+    left: 445px;
+    width: 275px;
+}
+
+#story7{
+    bottom: 170px;
+    right: 50px;
+}
+
+#story8{
+    bottom: 130px;
+    right: 40px;
+}
