@@ -130,10 +130,12 @@
             //hide controls for now
             actionArea.style.visibility = 'hidden';
 
+              //tally score
+              gameData.score[gameData.index] += gameData.rollSum;
+              
             checkWinCondition();
 
-            //tally score
-            gameData.score[gameData.index] += gameData.rollSum;
+          
 
             //update score on board
             document.getElementById(`${gameData.ppoints[gameData.index]}`).textContent = `${gameData.score[gameData.index]} pts`;
