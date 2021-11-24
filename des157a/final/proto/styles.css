@@ -1,0 +1,316 @@
+body {
+    display: grid;
+    place-content: center;
+    font-family: "Comfortaa";
+}
+
+h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+p{
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    font-size: 15px;
+    position: absolute;
+    bottom: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(129, 127, 127);
+}
+
+#container {
+    width: 1366px;
+    height: 768px;
+    /* background-color: rgb(71, 98, 109); */
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+#game{
+    display: none;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    height: 768px;
+    position: relative;
+    overflow: hidden;
+}
+
+#intro{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#instructions{
+    width: 550px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-right: 30px;
+   
+
+    font-size: 20px;
+}
+
+#instructions p{
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#instructions p:first-of-type{
+    text-align: center;
+}
+
+#instructions p:last-of-type{
+    margin-bottom: 0;
+}
+
+#rightside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    
+}
+
+#goal, #start{
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+#start{
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(218, 245, 175);
+}
+
+#goal{
+    background-color: rgb(230, 217, 41);
+}
+
+#goal, #start, #instructions{
+    box-shadow: 0px 0px 20px rgb(223, 222, 222);
+}
+
+#player-cards{
+    height: 400px;
+    width: 1300px;
+    margin-top: 80px;
+    /* background-color: burlywood; */
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+    margin-bottom: 10px;
+}
+
+#card1, #card2{
+    width: 600px;
+    height: 300px;
+    backdrop-filter: blur(15px);
+    /* background-color: red; */
+    /* background-color: rgba(255, 255, 255, 0.144); */
+    /* position: absolute; */
+    border-radius: 20px;
+    z-index: 1;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    font-size: 25px;
+    flex-direction: column;
+    margin: 20px;
+}
+
+#circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8{
+    /* z-index: 0; */
+    border-radius: 50%;
+    background: rgb(152,231,251);
+    background: linear-gradient(0deg, rgba(152,231,251,1) 0%, rgba(253,255,188,1) 100%);
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+    
+}
+
+#circle1{
+    width: 100px;
+    height: 100px;
+    top: 868px;
+    left: 0px;
+    animation: float1 4s ease-out forwards;
+}
+
+@keyframes float1 {
+    from{
+        top: 868px;
+    }
+    to{
+        top: 80px;
+    }
+}
+
+#circle2 {
+    left: 200px;
+    background: rgb(177,251,152);
+    background: linear-gradient(0deg, rgba(177,251,152,1) 0%, rgba(251,255,188,1) 100%);
+    width: 130px;
+    height: 130px;
+    animation: float2 4s linear forwards;
+}
+
+@keyframes float2 {
+    from{
+        top: 898px;
+    }
+    to{
+        top: 200px;
+    }
+}
+
+#circle3{
+    top: 868px;
+    left: 390px;
+
+    background: rgb(152,178,251);
+    background: linear-gradient(0deg, rgba(152,178,251,1) 0%, rgba(188,255,210,1) 100%);
+
+    animation: float3 3s ease-in-out forwards;
+}
+
+@keyframes float3 {
+    from{
+        top: 868px;
+    }
+    to{
+        top: 100px;
+    }
+}
+
+#circle4{
+    top: 180px;
+    left: 40px;
+    height: 150px;
+    width: 150px;
+
+    background: rgb(242,152,251);
+    background: linear-gradient(0deg, rgba(242,152,251,1) 0%, rgba(188,193,255,1) 100%);
+}
+
+#circle5{
+    top: 60px;
+    width: 130px;
+    height: 130px;
+    left: 480px;
+
+    background: rgb(152,247,251);
+    background: linear-gradient(0deg, rgba(152,247,251,1) 0%, rgba(255,188,190,1) 100%);
+}
+
+#circle6{
+    left: 710px;
+    top: 5px;
+    background: rgb(232,251,140);
+    background: linear-gradient(0deg, rgba(232,251,140,1) 0%, rgba(173,240,160,1) 100%);
+}
+
+#circle7{
+    bottom: 30px;
+    left: 660px;
+    width: 120px;
+    height: 120px;
+}
+
+#circle8{
+    background: rgb(210,140,251);
+    background: linear-gradient(0deg, rgba(210,140,251,1) 0%, rgba(240,160,204,1) 100%);
+
+    bottom: 120px;
+    left: 810px;
+}
+
+#numberline{
+    display: flex;
+    font-size: 50px;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 80px;
+
+    margin-bottom: 30px;
+
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.397);
+    border-radius: 30px;
+}
+
+#numberline p{
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+#actions{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+#roll, #skip, #playagain{
+    width: 100px;
+    
+    border-radius: 30px;
+
+    font-size: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+#playagain{
+    width: 200px;
+    display: none;
+    background-color: rgb(218, 245, 175);
+}
+
+#help{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(253, 175, 161);
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    top: 40px;
+    left: 1040px;
+    cursor: pointer;
+}
