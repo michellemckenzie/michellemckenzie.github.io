@@ -132,7 +132,7 @@
 
               //tally score
               gameData.score[gameData.index] += gameData.rollSum;
-              
+
             checkWinCondition();
 
           
@@ -167,6 +167,7 @@
                 document.getElementById(`${gameData.pname[gameData.index]}`).style.textDecoration = 'none';
 
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+                
                 setTimeout(throwDice, 1000);
             });
          }
