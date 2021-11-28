@@ -24,15 +24,15 @@
             <div id = "instructions">
                 <p> <b>Instructions: </b></p>
 
-                <p> There are two players. A player will be randomly selected to begin the game. Players will take turns rolling two "die".</p>
+                <p> There are two players. A player will be randomly selected to begin the game. Players will take turns answering math questions.</p>
 
-                <p> If one dice lands on a 1, the current user's turn ends, and the other player gets to play. If a player rolls two 1s, that's called snake eyes, and the current player's score goes to 0, and the other player rolls.</p>
+                <p> If a user gets a question right, they'll earn a point, and a bubble will float to their card. Be careful, three wrong answers will reset the user's score to 0. </p>
 
-                <p> The first player to reach the goal points, or more, is the winner! </p>
+                <p> The first player to reach the goal points is the winner! </p>
             </div>
 
             <div id = "rightside">
-                <p id = "goal">Goal: 30pts </p>
+                <p id = "goal">Goal: 15pts </p>
                 <p id = "start">Play game</p>
             </div>
         </div>
@@ -41,9 +41,6 @@
         <div id = "game">
              <!-- <div id = "help">?</div> -->
 
-             <!-- IMPORTANT COMMENT FOR PROTO1: -----------------------------------------------------
-                currently working on making the circles animated to move to the desired place once a user scores points. I have disabled the rest of the game so that other components won't get in the way of testing the animations. I'm stuck between rendering all circles manually or having javascript randomly create the circles. I'm experimenting with the different transition times and positioning of the cirles. ----------------
-            -->
 
             <div id = "currentplayer">&#x1F31F;</div>
 
@@ -61,22 +58,22 @@
             <p id = "timerLabel"> Timer </p>
             <p id = "questionLabel"> Question </p>
             <p id = "answerLabel"> Your Answer </p>
-            <div id = 'correct'>&#x2705;</div>
+
+            <p id = 'correct'></p>
 
             <div id = "actions">
-                <p id = "timer">0:07</p>
+                <p id = "timer">0:09</p>
 
                 <p id = "question">100 + 100 = </p>  
              
 
                 <form id = 'myForm'>
-                    <input type = "text" id="name" name="name" autocomplete = "off" required>
-                    
+                    <input type = "text" id= "answer" autocomplete = "off" required>
                 </form>
 
 
                 <div id = "controls">
-                    <button type = "submit" form = 'myForm' id = "submit"> Submit</button>
+                    <button type = "button" form = 'myForm' id = "submit"> Submit</button>
                     <p id = "skip"> Skip</p>
                 </div>
             </div>

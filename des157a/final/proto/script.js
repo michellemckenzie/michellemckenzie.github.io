@@ -8,13 +8,14 @@
     var startscreen = document.getElementById('intro');
     var actionArea = document.getElementById('actions');
     var comments = document.getElementById('commentary');
-    var submit = document.getElementById('submit');
+    
+    
   
 
     // var help = document.getElementById('help');
     // help.addEventListener('click', getHelp);
     var number_of_circles = 0;
-    var seconds = 7;
+    var seconds = 9;
 
 
     var gameData = {
@@ -32,6 +33,8 @@
         p2bubbles: [],
         p1bubbletop: [],
         p2bubbletop: [],
+        starPosition: [330, 980],
+        answer: 0,
     };
 
     console.log(gameData);
@@ -48,23 +51,13 @@
         //show the game screen
         gamescreen.style.display = 'flex';
 
-        submit.addEventListener('click', submitButton);
+        let starEmoji = document.getElementById('currentplayer');
+        starEmoji.style.left = `${gameData.starPosition[gameData.index]}px`;
 
-        for (let i = 0; i < 20; i++){
-            randomCircle();
-        }
         
-        countdown();
-
         // setTimeout(dropBubbles, 4000);
 
         randomequation();
-        randomequation();
-        randomequation();
-        randomequation();
-        randomequation();
-
-       
     });
 
     //this function creates a random circle that will bubble up behind the current player if they scored a point
@@ -72,7 +65,9 @@
         console.log('in randomCircle');
 
         //add the new circle element to the screen
-        gamescreen.innerHTML += "<div class = 'circle'></div>"
+        let div = document.createElement('div');
+        div.className += 'circle';
+        gamescreen.appendChild(div);
 
         //grab the circle class
         let circle = document.getElementsByClassName('circle');
@@ -103,7 +98,6 @@
 
         //call the animation to make the bubble go up, and stay at the resting position 
         circle[number_of_circles].style.animation = 'bubbleUp 3s ease-in-out forwards';
-
       
         //increment the number of circles for the next circle class element
         number_of_circles += 1;   
@@ -112,6 +106,7 @@
         console.log(`left: ${left}`);
 
         console.log(gameData);
+        return;
     }
 
     function dropBubbles(){
@@ -179,24 +174,38 @@
 
     function countdown(){
         console.log('in countdown');
+       
+
         if (seconds>=0){
             document.getElementById('timer').textContent = `0:0${seconds}`;
             seconds -=1;
             setTimeout(countdown, 1000);
         }
+        else if (seconds == -2){
+         
+            return;
+        }
         else{
             console.log('done');
+            return;
         }
         
       
     }
 
     function randomequation(){
+      
+        let visFeedback = document.getElementById('correct');
+        visFeedback.style.visibility = 'hidden';
+
+        var controls = document.getElementById('controls');
+        controls.style.visibility = 'visible';
+
+
         //generate random number for an operator
         let chooseOperator = Math.floor (Math.random() * 3); //values 0 - 3
         let operand1 = 0;
         let operand2 = 0;
-        let answer = 0;
 
         let operator = '';
 
@@ -222,28 +231,98 @@
         }
 
         if (operator == '+'){
-            answer = operand1 + operand2;
+            gameData.answer = operand1 + operand2;
         }
         else if (operator == '-'){
-            answer = operand1 - operand2;
+            gameData.answer = operand1 - operand2;
         }
         else if (operator == '*'){
-            answer = operand1 * operand2;
+            gameData.answer = operand1 * operand2;
         }
 
         console.log(operand1);
         console.log(operand2);
-        console.log(answer);
+        console.log(gameData.answer);
 
         document.getElementById('question').textContent = `${operand1} ${operator} ${operand2} = `;
+
+        let form = document.getElementById('myForm');
+        form.addEventListener('submit', submitButton);
+
+        seconds = 9;
+        countdown();
 
 
         // let top = Math.random() * (280-20) + 20; //values 20 - 280
 
     }
 
-    function submitButton(){
+    function submitButton(e){
+        e.preventDefault();
+
+        let answer = document.getElementById('answer').value;
+        console.log ('value: ', answer);
         console.log('submit button clicked');
+
+        document.getElementById('timer').textContent = `0:0${seconds+1}`;
+
+        seconds = -2;
+
+        if (answer == gameData.answer){
+            console.log("correct!");
+            randomCircle();
+
+            let visFeedback = document.getElementById('correct');visFeedback.innerHTML = '&#x2705;';
+            visFeedback.style.visibility = 'visible';
+            document.getElementById('answer').value = '';
+            document.getElementById('answer').focus();
+
+            var controls = document.getElementById('controls');
+            controls.style.visibility = 'hidden';
+
+            gameData.score[gameData.index] += 1;
+            document.getElementById(`${gameData.ppoints[gameData.index]}`).textContent = `${gameData.score[gameData.index]} pts`;
+
+            setTimeout(randomequation, 2000);
+        }
+        else{
+            console.log('false');
+            let visFeedback = document.getElementById('correct');visFeedback.innerHTML = '&#x274C;';
+            visFeedback.style.visibility = 'visible';
+
+            document.getElementById('answer').value = '';
+
+            var controls = document.getElementById('controls');
+            controls.style.visibility = 'hidden';
+
+            changePlayer();
+
+            setTimeout(randomequation, 2000);
+        }
+    }
+
+    function changePlayer(){
+        let starEmoji = document.getElementById('currentplayer');
+
+        //set the horizontal position
+        starEmoji.style.setProperty("--fromtop", `${gameData.starPosition[gameData.index]}px`);
+      
+        if (gameData.index == 0){
+            gameData.index = 1;
+            starEmoji.style.setProperty("--totop", `${gameData.starPosition[gameData.index]}px`);
+        }
+        else{
+            gameData.index = 0;
+            starEmoji.style.setProperty("--totop", `${gameData.starPosition[gameData.index]}px`);
+        }
+
+          
+
+        //call the animation and stay at the resting position 
+        starEmoji.style.animation = 'switchplayer 2s ease-in-out forwards';
+        starEmoji.style.display = 'none';
+        starEmoji.style.display = 'block';
+        
     }
 
 

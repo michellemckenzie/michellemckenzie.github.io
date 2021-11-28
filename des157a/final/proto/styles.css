@@ -130,7 +130,7 @@ a{
     /* position: absolute; */
     border-radius: 20px;
     z-index: 1;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 
     display: flex;
     justify-content: center;
@@ -298,6 +298,7 @@ input{
     position: absolute;
     top: 380px;
     left: 914px;
+    visibility: hidden;
 }
 
 #timerLabel{
@@ -328,5 +329,14 @@ input{
     z-index: 2;
     font-size: 40px;
     position: absolute;
-    left: 330px;
     top: 80px;
+}
+
+@keyframes switchplayer{
+    from{
+        left: var(--fromtop);
+    }
+    to{
+        left: var(--totop);
+    }
+}
