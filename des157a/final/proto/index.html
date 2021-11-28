@@ -45,14 +45,7 @@
                 currently working on making the circles animated to move to the desired place once a user scores points. I have disabled the rest of the game so that other components won't get in the way of testing the animations. I'm stuck between rendering all circles manually or having javascript randomly create the circles. I'm experimenting with the different transition times and positioning of the cirles. ----------------
             -->
 
-             <div id = "circle1"></div>
-             <div id = "circle2"></div>
-             <div id = "circle3"></div>
-             <!-- <div id = "circle4"></div>
-             <div id = "circle5"></div>
-             <div id = "circle6"></div>
-             <div id = "circle7"></div>
-             <div id = "circle8"></div> -->
+            <div id = "currentplayer">&#x1F31F;</div>
 
             <div id = "player-cards">
                 <div id = "card1">
@@ -65,21 +58,28 @@
                 </div>
             </div>
 
-            <!-- <p id = "commentary"></p> -->
-    
-            <!-- <div id = "numberline">
-                <p id = "one">1</p>
-                <p id = "two">2</p>
-                <p id = "three">3</p>
-                <p id = "four">4</p>
-                <p id = "five">5</p>
-                <p id = "six">6</p>
-            </div> -->
-    
-            <!-- <div id = "actions">
-                <p id = "roll"> Roll</p>
-                <p id = "skip"> Skip</p>
-            </div> -->
+            <p id = "timerLabel"> Timer </p>
+            <p id = "questionLabel"> Question </p>
+            <p id = "answerLabel"> Your Answer </p>
+            <div id = 'correct'>&#x2705;</div>
+
+            <div id = "actions">
+                <p id = "timer">0:07</p>
+
+                <p id = "question">100 + 100 = </p>  
+             
+
+                <form id = 'myForm'>
+                    <input type = "text" id="name" name="name" autocomplete = "off" required>
+                    
+                </form>
+
+
+                <div id = "controls">
+                    <button type = "submit" form = 'myForm' id = "submit"> Submit</button>
+                    <p id = "skip"> Skip</p>
+                </div>
+            </div>
 
             <p id = "playagain"> Play Again?</p>
         </div>

@@ -110,7 +110,7 @@ a{
 #player-cards{
     height: 400px;
     width: 1300px;
-    margin-top: 80px;
+    margin-top: 10px;
     /* background-color: burlywood; */
     position: relative;
 
@@ -123,14 +123,14 @@ a{
 
 #card1, #card2{
     width: 600px;
-    height: 300px;
+    height: 250px;
     backdrop-filter: blur(15px);
     /* background-color: red; */
     /* background-color: rgba(255, 255, 255, 0.144); */
     /* position: absolute; */
     border-radius: 20px;
     z-index: 1;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     display: flex;
     justify-content: center;
@@ -141,7 +141,7 @@ a{
     margin: 20px;
 }
 
-#circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8, .circle{
+.circle{
     /* z-index: 0; */
     border-radius: 50%;
     background: rgb(152,231,251);
@@ -152,130 +152,10 @@ a{
     height: 100px;
 }
 
-#circle1{
-    width: 100px;
-    height: 100px;
-    top: 868px;
-    left: 0px;
-    animation: float1 4s ease-out forwards;
-}
 
-@keyframes float1 {
-    from{
-        top: 868px;
-    }
-    to{
-        top: 80px;
-    }
-}
-
-#circle2 {
-    left: 200px;
-    background: rgb(177,251,152);
-    background: linear-gradient(0deg, rgba(177,251,152,1) 0%, rgba(251,255,188,1) 100%);
-    width: 130px;
-    height: 130px;
-    animation: float2 4s linear forwards;
-}
-
-@keyframes float2 {
-    from{
-        top: 898px;
-    }
-    to{
-        top: 200px;
-    }
-}
-
-#circle3{
-    top: 868px;
-    left: 390px;
-
-    background: rgb(152,178,251);
-    background: linear-gradient(0deg, rgba(152,178,251,1) 0%, rgba(188,255,210,1) 100%);
-
-    animation: float3 3s ease-in-out forwards;
-}
-
-@keyframes float3 {
-    from{
-        top: 868px;
-    }
-    to{
-        top: 100px;
-    }
-}
-
-#circle4{
-    top: 180px;
-    left: 40px;
-    height: 150px;
-    width: 150px;
-
-    background: rgb(242,152,251);
-    background: linear-gradient(0deg, rgba(242,152,251,1) 0%, rgba(188,193,255,1) 100%);
-}
-
-#circle5{
-    top: 60px;
-    width: 130px;
-    height: 130px;
-    left: 480px;
-
-    background: rgb(152,247,251);
-    background: linear-gradient(0deg, rgba(152,247,251,1) 0%, rgba(255,188,190,1) 100%);
-}
-
-#circle6{
-    left: 710px;
-    top: 5px;
-    background: rgb(232,251,140);
-    background: linear-gradient(0deg, rgba(232,251,140,1) 0%, rgba(173,240,160,1) 100%);
-}
-
-#circle7{
-    bottom: 30px;
-    left: 660px;
+ #skip, #playagain{
+    z-index: 1;
     width: 120px;
-    height: 120px;
-}
-
-#circle8{
-    background: rgb(210,140,251);
-    background: linear-gradient(0deg, rgba(210,140,251,1) 0%, rgba(240,160,204,1) 100%);
-
-    bottom: 120px;
-    left: 810px;
-}
-
-#numberline{
-    display: flex;
-    font-size: 50px;
-    justify-content: space-around;
-    align-items: center;
-    width: 500px;
-    height: 80px;
-
-    margin-bottom: 30px;
-
-    backdrop-filter: blur(15px);
-    background-color: rgba(255, 255, 255, 0.397);
-    border-radius: 30px;
-}
-
-#numberline p{
-    margin-bottom: 0;
-    margin-top: 8px;
-}
-
-#actions{
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
-}
-
-#roll, #skip, #playagain{
-    width: 100px;
     
     border-radius: 30px;
 
@@ -285,12 +165,33 @@ a{
     justify-content: space-around;
     padding: 20px;
 
+    backdrop-filter: blur(15px);
     box-shadow: 0px 6px 10px rgb(167, 164, 164);
 
     cursor: pointer;
 
     backdrop-filter: blur(15px);
     background-color: rgba(255, 255, 255, 0.397);
+
+    margin-bottom: 0;
+}
+
+
+button{
+    z-index: 1;
+    border: none;
+    background-color: white;
+    font-size: 30px;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+
 }
 
 #playagain{
@@ -313,3 +214,119 @@ a{
     left: 1040px;
     cursor: pointer;
 }
+
+@keyframes bubbleUp{
+    from{
+        top: 868px;
+    }
+    to{
+        /* this is a variable for where the circle will rest at */
+        top: var(--top);
+    }
+}
+
+@keyframes bubbleDown{
+    from{
+        /* this is a variable for where the circle will rest at */
+        top: var(--top);
+    }
+    to{
+        top: 868px;
+    }
+}
+
+#actions{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    /* background-color: beige; */
+    align-items: center;
+}
+
+#timer{
+    z-index: 1;
+    font-size: 80px;
+    /* background-color: blueviolet; */
+    padding: 20px;
+    border-radius: 20px;
+    width: 160px;
+    display: flex;
+    text-align: left;
+    margin: 0;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+}
+
+#question{
+    z-index: 1;
+    font-size: 80px;
+    /* background-color: brown; */
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    margin: 0;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+}
+
+#controls{
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    justify-content: space-between;
+ 
+}
+
+input{
+    z-index: 1;
+    width: 140px;
+    margin-left: 10px;
+    height: 80px;
+    font-size: 80px;
+    padding: 5px;
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+    border: none;
+    border-radius: 20px;
+}
+
+#correct{
+    z-index: 1;
+    font-size: 50px;
+   
+    position: absolute;
+    top: 380px;
+    left: 914px;
+}
+
+#timerLabel{
+    font-size: 20px;
+    margin: 0;
+    position: absolute;
+    top: 450px;
+    left: 189px;
+}
+
+#questionLabel{
+    font-size: 20px;
+    margin: 0;
+    position: absolute;
+    top: 450px;
+    left: 535px;
+}
+
+#answerLabel{
+    font-size: 20px;
+    margin: 0;
+    position: absolute;
+    top: 450px;
+    left: 875px;
+}
+
+#currentplayer{
+    z-index: 2;
+    font-size: 40px;
+    position: absolute;
+    left: 330px;
+    top: 80px;
