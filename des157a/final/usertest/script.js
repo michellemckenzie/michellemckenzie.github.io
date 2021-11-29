@@ -256,6 +256,8 @@
 
         document.getElementById('myForm').addEventListener('submit', submitButton);
 
+        document.getElementById('submit').addEventListener('click', submitButton);
+
         seconds = 9;
         countdown();
 
