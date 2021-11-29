@@ -6,14 +6,8 @@
     var startGame = document.getElementById('start');
     var gamescreen = document.getElementById('game');
     var startscreen = document.getElementById('intro');
-    var actionArea = document.getElementById('actions');
-    var comments = document.getElementById('commentary');
     
-    
-  
 
-    // var help = document.getElementById('help');
-    // help.addEventListener('click', getHelp);
     var number_of_circles = 0;
     var seconds = 9;
 
@@ -28,7 +22,7 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 30,
+        gameEnd: 1,
         p1bubbles: [],
         p2bubbles: [],
         p1bubbletop: [],
@@ -53,6 +47,9 @@
 
         let starEmoji = document.getElementById('currentplayer');
         starEmoji.style.left = `${gameData.starPosition[gameData.index]}px`;
+
+        document.getElementById('skip').addEventListener('click', changePlayer);
+        document.getElementById('help').addEventListener('click', getHelp);
 
         
         // setTimeout(dropBubbles, 4000);
@@ -174,23 +171,26 @@
 
     function countdown(){
         console.log('in countdown');
-       
-
-        if (seconds>=0){
+        
+        if(seconds == 0){
+            document.getElementById('timer').textContent = `0:00`;
+            document.getElementById('question').textContent = "time's up!";
+            document.getElementById('controls').style.visibility = 'hidden';
+            document.getElementById('myForm').style.visibility = 'hidden';
+            changePlayer();
+            return;
+        }
+        else if (seconds>0){
             document.getElementById('timer').textContent = `0:0${seconds}`;
-            seconds -=1;
+            console.log(seconds);
+            seconds -= 1;
             setTimeout(countdown, 1000);
         }
-        else if (seconds == -2){
-         
-            return;
-        }
         else{
+            seconds = -1;
             console.log('done');
             return;
-        }
-        
-      
+        }  
     }
 
     function randomequation(){
@@ -200,6 +200,9 @@
 
         var controls = document.getElementById('controls');
         controls.style.visibility = 'visible';
+
+        document.getElementById('myForm').style.visibility = 'visible';
+
 
 
         //generate random number for an operator
@@ -246,11 +249,11 @@
 
         document.getElementById('question').textContent = `${operand1} ${operator} ${operand2} = `;
 
-        let form = document.getElementById('myForm');
-        form.addEventListener('submit', submitButton);
+        document.getElementById('myForm').addEventListener('submit', submitButton);
 
         seconds = 9;
         countdown();
+
 
 
         // let top = Math.random() * (280-20) + 20; //values 20 - 280
@@ -258,7 +261,11 @@
     }
 
     function submitButton(e){
+
         e.preventDefault();
+
+        console.log('hereeee');
+       
 
         let answer = document.getElementById('answer').value;
         console.log ('value: ', answer);
@@ -272,7 +279,8 @@
             console.log("correct!");
             randomCircle();
 
-            let visFeedback = document.getElementById('correct');visFeedback.innerHTML = '&#x2705;';
+            let visFeedback = document.getElementById('correct');
+            visFeedback.innerHTML = '&#x2705;';
             visFeedback.style.visibility = 'visible';
             document.getElementById('answer').value = '';
             document.getElementById('answer').focus();
@@ -283,11 +291,13 @@
             gameData.score[gameData.index] += 1;
             document.getElementById(`${gameData.ppoints[gameData.index]}`).textContent = `${gameData.score[gameData.index]} pts`;
 
-            setTimeout(randomequation, 2000);
+            checkWin();
+            
         }
         else{
             console.log('false');
-            let visFeedback = document.getElementById('correct');visFeedback.innerHTML = '&#x274C;';
+            let visFeedback = document.getElementById('correct');
+            visFeedback.innerHTML = '&#x274C;';
             visFeedback.style.visibility = 'visible';
 
             document.getElementById('answer').value = '';
@@ -296,36 +306,89 @@
             controls.style.visibility = 'hidden';
 
             changePlayer();
-
-            setTimeout(randomequation, 2000);
         }
     }
 
     function changePlayer(){
         let starEmoji = document.getElementById('currentplayer');
+        document.getElementById('question').textContent = ' switching! ';
 
-        //set the horizontal position
-        starEmoji.style.setProperty("--fromtop", `${gameData.starPosition[gameData.index]}px`);
+        document.getElementById('timer').textContent = `0:00`;
+        seconds = -2;
       
         if (gameData.index == 0){
             gameData.index = 1;
-            starEmoji.style.setProperty("--totop", `${gameData.starPosition[gameData.index]}px`);
         }
         else{
             gameData.index = 0;
-            starEmoji.style.setProperty("--totop", `${gameData.starPosition[gameData.index]}px`);
         }
 
-          
+        starEmoji.style.left = `${gameData.starPosition[gameData.index]}px`;
 
-        //call the animation and stay at the resting position 
-        starEmoji.style.animation = 'switchplayer 2s ease-in-out forwards';
-        starEmoji.style.display = 'none';
-        starEmoji.style.display = 'block';
-        
+
+        document.getElementById('answer').value = '';
+        document.getElementById('answer').focus();
+
+        var controls = document.getElementById('controls');
+        controls.style.visibility = 'hidden';
+
+        setTimeout(randomequation, 1000);
     }
 
+    function getHelp(){
+        //this is to pause the timer
+        let currentSeconds = seconds;
+        seconds = -3;
 
- 
+        document.getElementById('overlay').className = 'showing';
+        document.getElementById('overlay').style.display = 'grid';
+  
+    
+        document.querySelector('.close').addEventListener('click', function(e){
+            e.preventDefault();
+    
+            document.getElementById('overlay').style.display = '';
+            document.getElementById('overlay').className = 'hidden';
+
+            //resume the timer
+            seconds = currentSeconds;
+            countdown();
+
+        });
+    
+    
+        document.addEventListener('keydown', function(e){
+            if (e.key == "Escape"){
+                document.getElementById('overlay').style.display = '';
+                document.getElementById('overlay').className = 'hidden';
+
+                //resume the timer
+                seconds = currentSeconds;
+                countdown();
+            }
+        });
+    }
+
+    function checkWin(){
+        if (gameData.score[gameData.index] == gameData.gameEnd){
+            console.log(' you won!!');
+            document.getElementById('actions').style.display = 'none';
+            document.getElementById('myForm').style.visibility = 'hidden';
+            document.getElementById('correct').style.visibility = 'hidden';
+            document.getElementById('timerLabel').style.visibility = 'hidden';
+            document.getElementById('questionLabel').style.visibility = 'hidden';
+            document.getElementById('answerLabel').style.visibility = 'hidden';
+
+            document.getElementById('endMessage').style.display = 'flex';
+            document.getElementById('winner').textContent = `${gameData.players[gameData.index]} won!`;
+
+            document.getElementById('playagain').addEventListener('click', function(){
+                location.reload();
+            });
+        }
+        else{
+            setTimeout(randomequation, 2000);
+        }
+    }
 
 })();

@@ -18,15 +18,19 @@
 <body>
     <div id = "container">
 
-        <h1> Game of Pig</h1>
+        <h1> Game on!</h1>
 
         <div id = "intro">
             <div id = "instructions">
                 <p> <b>Instructions: </b></p>
 
+                <p>Hello! Welcome to my mathtastic game!</p>
+
                 <p> There are two players. A player will be randomly selected to begin the game. Players will take turns answering math questions.</p>
 
-                <p> If a user gets a question right, they'll earn a point, and a bubble will float to their card. Be careful, three wrong answers will reset the user's score to 0. </p>
+                <p> If a user gets a question right, they'll earn a point, and a bubble will float to their card. You can submit answers by clicking the button 'submit' or hit the enter key (this is faster!). There is a timer for 9 seconds, so be quick! If you get a question wrong, or the timer runs out, the other player gets to play. 
+                If you need a break from the question, you can click the 'skip' button to skip your turn, and the other player will be up.
+                </p>
 
                 <p> The first player to reach the goal points is the winner! </p>
             </div>
@@ -39,8 +43,6 @@
       
 
         <div id = "game">
-             <!-- <div id = "help">?</div> -->
-
 
             <div id = "currentplayer">&#x1F31F;</div>
 
@@ -76,9 +78,29 @@
                     <button type = "button" form = 'myForm' id = "submit"> Submit</button>
                     <p id = "skip"> Skip</p>
                 </div>
+
+                <div id = "help">?</div>
             </div>
 
-            <p id = "playagain"> Play Again?</p>
+            <div id = "endMessage">
+                <p id = 'winner'></p>
+                <p id = "playagain"> Play Again?</p>
+            </div>
+             
+            <section id="overlay" class="hidden">
+                <article>
+                    <p> There are two players. A player will be randomly selected to begin the game. Players will take turns answering math questions.</p>
+
+                    <p> If a user gets a question right, they'll earn a point, and a bubble will float to their card. Else, if the answer is wrong, or the timer runs out, player's will switch turns. Be careful, three wrong answers will reset the user's score to 0. </p>
+
+                    <p> Click 'submit' or press the 'enter' button to submit anwers.</p>
+    
+                    <p> The first player to reach the goal points is the winner! </p>
+
+                    <p> Goal: 15 points</p>
+                    <button type = "button" class="close">close</button>
+                </article>
+            </section>
         </div>
         
 

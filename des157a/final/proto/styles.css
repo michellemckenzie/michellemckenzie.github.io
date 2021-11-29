@@ -56,7 +56,7 @@ a{
 }
 
 #instructions{
-    width: 550px;
+    width: 680px;
     padding: 40px;
     border-radius: 20px;
     margin-right: 30px;
@@ -171,7 +171,7 @@ a{
     cursor: pointer;
 
     backdrop-filter: blur(15px);
-    background-color: rgba(255, 255, 255, 0.397);
+    background-color: rgba(253, 175, 30, 0.397);
 
     margin-bottom: 0;
 }
@@ -180,9 +180,9 @@ a{
 button{
     z-index: 1;
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     font-size: 30px;
-    /* background-color: bisque; */
+    background-color:  rgba(128, 255, 0, 0.5);;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -191,28 +191,29 @@ button{
 
     backdrop-filter: blur(15px);
     box-shadow: 0px 6px 10px rgb(167, 164, 164);
-
 }
+
 
 #playagain{
     width: 200px;
-    display: none;
     background-color: rgb(218, 245, 175);
 }
 
 #help{
+    z-index: 1;
     width: 50px;
     height: 50px;
-    background-color: rgb(253, 175, 161);
-    position: absolute;
+    background-color: rgba(251, 253, 161, 0.486);
+    /* position: absolute; */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    top: 40px;
-    left: 1040px;
+    /* top: 380px;
+    right: 175px; */
     cursor: pointer;
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
 }
 
 @keyframes bubbleUp{
@@ -238,7 +239,7 @@ button{
 #actions{
     display: flex;
     justify-content: space-between;
-    width: 1100px;
+    width: 1200px;
     /* background-color: beige; */
     align-items: center;
 }
@@ -280,7 +281,7 @@ button{
 }
 
 input{
-    z-index: 1;
+    z-index: 2;
     width: 140px;
     margin-left: 10px;
     height: 80px;
@@ -297,7 +298,7 @@ input{
    
     position: absolute;
     top: 380px;
-    left: 914px;
+    left: 863px;
     visibility: hidden;
 }
 
@@ -306,7 +307,7 @@ input{
     margin: 0;
     position: absolute;
     top: 450px;
-    left: 189px;
+    left: 140px;
 }
 
 #questionLabel{
@@ -314,7 +315,7 @@ input{
     margin: 0;
     position: absolute;
     top: 450px;
-    left: 535px;
+    left: 485px;
 }
 
 #answerLabel{
@@ -322,7 +323,7 @@ input{
     margin: 0;
     position: absolute;
     top: 450px;
-    left: 875px;
+    left: 825px;
 }
 
 #currentplayer{
@@ -339,4 +340,62 @@ input{
     to{
         left: var(--totop);
     }
+}
+
+.hidden {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+#overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    /* display: grid; */
+    justify-content: center;
+    align-content: center;
+}
+
+#overlay article{
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: #fff;
+    padding: 40px;
+    width: 900px;
+    height: 500px;
+    /* position: absolute; */
+    /* top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%); */
+    
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#overlay article p{
+    text-align: left;
+}
+
+.close{
+    background-color: rgb(152, 219, 240);
+    width: 200px;
+}
+
+#endMessage{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#winner{
+    font-size: 50px;
 }
