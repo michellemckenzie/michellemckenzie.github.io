@@ -22,7 +22,7 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 1,
+        gameEnd: 10,
         p1bubbles: [],
         p2bubbles: [],
         p1bubbletop: [],
@@ -60,6 +60,9 @@
     //this function creates a random circle that will bubble up behind the current player if they scored a point
     function randomCircle(){
         console.log('in randomCircle');
+
+        const bubble = new Audio('sounds/bubble.m4a');
+        bubble.play();
 
         //add the new circle element to the screen
         let div = document.createElement('div');
@@ -194,6 +197,8 @@
     }
 
     function randomequation(){
+        const rollSound = new Audio('sounds/rollsound.m4a');
+        rollSound.play();
       
         let visFeedback = document.getElementById('correct');
         visFeedback.style.visibility = 'hidden';
@@ -295,6 +300,8 @@
             
         }
         else{
+            const wrong = new Audio('sounds/wrong.m4a');
+            wrong.play();
             console.log('false');
             let visFeedback = document.getElementById('correct');
             visFeedback.innerHTML = '&#x274C;';
@@ -370,8 +377,10 @@
     }
 
     function checkWin(){
+        const winner= new Audio('sounds/winner.m4a');
         if (gameData.score[gameData.index] == gameData.gameEnd){
             console.log(' you won!!');
+            winner.play();
             document.getElementById('actions').style.display = 'none';
             document.getElementById('myForm').style.visibility = 'hidden';
             document.getElementById('correct').style.visibility = 'hidden';
