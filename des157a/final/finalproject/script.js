@@ -281,7 +281,7 @@
         console.log ('value: ', answer);
         console.log('submit button clicked');
 
-        if(seconds > 9){
+        if(seconds+1 > 9){
             document.getElementById('timer').textContent = `0:${seconds+1}`;
         }
         else{
