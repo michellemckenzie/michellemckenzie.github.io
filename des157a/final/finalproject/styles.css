@@ -1,0 +1,395 @@
+body {
+    display: grid;
+    place-content: center;
+    font-family: "Comfortaa";
+}
+
+h1{
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+p{
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    font-size: 15px;
+    position: absolute;
+    bottom: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(129, 127, 127);
+}
+
+#container {
+    width: 1366px;
+    height: 768px;
+    /* background-color: rgb(71, 98, 109); */
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+#game{
+    display: none;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    height: 768px;
+    position: relative;
+    overflow: hidden;
+}
+
+#intro{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#instructions{
+    width: 700px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-right: 30px;
+   
+
+    font-size: 20px;
+}
+
+#instructions p{
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#instructions p:first-of-type{
+    text-align: center;
+}
+
+#instructions p:last-of-type{
+    margin-bottom: 0;
+}
+
+#rightside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    
+}
+
+#goal, #start{
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+#start{
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(218, 245, 175);
+}
+
+#goal{
+    background-color: rgb(230, 217, 41);
+}
+
+#goal, #start, #instructions{
+    box-shadow: 0px 0px 20px rgb(223, 222, 222);
+}
+
+#player-cards{
+    height: 400px;
+    width: 1300px;
+    margin-top: 10px;
+    /* background-color: burlywood; */
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+    margin-bottom: 10px;
+}
+
+#card1, #card2{
+    width: 600px;
+    height: 250px;
+    backdrop-filter: blur(15px);
+    /* background-color: red; */
+    /* background-color: rgba(255, 255, 255, 0.144); */
+    /* position: absolute; */
+    border-radius: 20px;
+    z-index: 1;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    font-size: 25px;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.circle{
+    /* z-index: 0; */
+    border-radius: 50%;
+    background: rgb(152,231,251);
+    background: linear-gradient(0deg, rgba(152,231,251,1) 0%, rgba(253,255,188,1) 100%);
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+}
+
+
+ #skip, #playagain{
+    z-index: 1;
+    width: 120px;
+    
+    border-radius: 30px;
+
+    font-size: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+    background-color: rgba(253, 175, 30, 0.397);
+
+    margin-bottom: 0;
+}
+
+
+button{
+    z-index: 1;
+    border: none;
+    font-size: 30px;
+    background-color:  rgba(128, 255, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+}
+
+
+#playagain{
+    width: 200px;
+    background-color: rgb(218, 245, 175);
+}
+
+#help{
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(251, 253, 161, 0.486);
+    /* position: absolute; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    /* top: 380px;
+    right: 175px; */
+    cursor: pointer;
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+}
+
+@keyframes bubbleUp{
+    from{
+        top: 868px;
+    }
+    to{
+        /* this is a variable for where the circle will rest at */
+        top: var(--top);
+    }
+}
+
+@keyframes bubbleDown{
+    from{
+        /* this is a variable for where the circle will rest at */
+        top: var(--top);
+    }
+    to{
+        top: 868px;
+    }
+}
+
+#actions{
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    /* background-color: beige; */
+    align-items: center;
+}
+
+#timer{
+    z-index: 1;
+    font-size: 80px;
+    /* background-color: blueviolet; */
+    padding: 20px;
+    border-radius: 20px;
+    width: 160px;
+    display: flex;
+    text-align: left;
+    margin: 0;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+}
+
+#question{
+    z-index: 1;
+    font-size: 80px;
+    /* background-color: brown; */
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    margin: 0;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+}
+
+#controls{
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    justify-content: space-between;
+ 
+}
+
+input{
+    z-index: 2;
+    width: 140px;
+    margin-left: 10px;
+    height: 80px;
+    font-size: 80px;
+    padding: 27px;
+    box-shadow: 0px 6px 10px rgb(167, 164, 164);
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#correct{
+    z-index: 1;
+    font-size: 50px;
+   
+    position: absolute;
+    top: 380px;
+    left: 863px;
+    visibility: hidden;
+}
+
+#timerLabel{
+    font-size: 20px;
+    margin: 0;
+    position: absolute;
+    top: 450px;
+    left: 140px;
+}
+
+#questionLabel{
+    font-size: 20px;
+    margin: 0;
+    position: absolute;
+    top: 450px;
+    left: 485px;
+}
+
+#answerLabel{
+    font-size: 20px;
+    margin: 0;
+    position: absolute;
+    top: 450px;
+    left: 825px;
+}
+
+
+@keyframes switchplayer{
+    from{
+        left: var(--fromtop);
+    }
+    to{
+        left: var(--totop);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+#overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    /* display: grid; */
+    justify-content: center;
+    align-content: center;
+}
+
+#overlay article{
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: #fff;
+    padding: 40px;
+    width: 900px;
+    height: 500px;
+    /* position: absolute; */
+    /* top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%); */
+    
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#overlay article p{
+    text-align: left;
+}
+
+.close{
+    background-color: rgb(152, 219, 240);
+    width: 200px;
+}
+
+#endMessage{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#winner{
+    font-size: 50px;
+}

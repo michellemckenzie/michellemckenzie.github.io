@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle's Final Game On!</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+    <link href = "styles.css" rel="stylesheet">
+
+    <script src = "script.js" defer></script>
+
+</head>
+<body>
+    <div id = "container">
+
+        <h1> game on!</h1>
+
+        <div id = "intro">
+            <div id = "instructions">
+
+                <p>Hello! Welcome to my mathtastic game!</p>
+
+                <p> There are two players. A player will be randomly selected to begin the game. Players will take turns answering math questions.</p>
+
+                <p> If a user gets a question right, they'll earn one point. You can submit answers by clicking the button 'submit' or hit the enter key. There is a timer for 9 seconds, so be quick! If you get a question wrong, or the timer runs out, the other player gets to play. Every question you get wrong is a strike! 3 strikes and you lose all of your points.</p>
+                <p>If you want to pass your turn, click the 'pass' button to skip your turn, and the other player will be up. The first player to reach the goal points is the winner!</p>
+                
+            </div>
+
+            <div id = "rightside">
+                <p id = "goal">goal: 10pts </p>
+                <p id = "start">play game</p>
+            </div>
+        </div>
+      
+
+        <div id = "game">
+
+            <div id = "player-cards">
+                <div id = "card1">
+                    <p id = "p1"> player one</p>
+                    <p id = "p1points"> 0 pts</p>
+                    <p id = 'p1strike'> strike: 0</p>
+                </div>
+                <div id = "card2">
+                    <p id = "p2">player two</p>
+                    <p id = "p2points"> 0 pts</p>
+                    <p id = 'p2strike'> strike: 0</p>
+                </div>
+            </div>
+
+            <p id = "timerLabel"> timer </p>
+            <p id = "questionLabel"> question </p>
+            <p id = "answerLabel"> your answer </p>
+
+            <p id = 'correct'></p>
+
+            <div id = "actions">
+                <p id = "timer">0:15</p>
+
+                <p id = "question">100 + 100 = </p>  
+             
+
+                <form id = 'myForm'>
+                    <input type = "text" id= "answer" autocomplete = "off" required>
+                </form>
+
+
+                <div id = "controls">
+                    <button type = "button" form = 'myForm' id = "submit"> submit</button>
+                    <p id = "skip"> pass</p>
+                </div>
+
+                <div id = "help">?</div>
+            </div>
+
+            <div id = "endMessage">
+                <p id = 'winner'></p>
+                <p id = "playagain"> play again?</p>
+            </div>
+             
+            <section id="overlay" class="hidden">
+                <article>
+                    <p> There are two players. A player will be randomly selected to begin the game. Players will take turns answering math questions.</p>
+
+                    <p> If a user gets a question right, they'll earn a point, and a bubble will float to their card. Else, if the answer is wrong, or the timer runs out, player's will switch turns. Every question you get wrong is a strike! 3 strikes and you lose all of your points.</p>
+
+                    <p> Click 'submit' or press the 'enter' button to submit anwers.</p>
+    
+                    <p> The first player to reach the goal points is the winner! </p>
+
+                    <p> Goal: 10 points</p>
+                    <button type = "button" class="close">close</button>
+                </article>
+            </section>
+        </div>
+        
+
+        <footer>
+            <a href="mailto:&#109;&#108;&#109;&#099;&#107;&#101;&#110;&#122;&#105;&#101;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">email</a>
+
+            <a href="https://validator.w3.org/check?uri=https://michellemckenzie.github.io/des157a/final/finalproject">html</a>
+
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">css</a>
+        </footer>
+      
+
+    </div>
+    
+</body>
+</html>
