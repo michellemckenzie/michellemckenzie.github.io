@@ -4,7 +4,7 @@
 
 body {
     background-color: #333;
-    color: rgb(235, 235, 235);
+    color: white;
     transition: all 2s;
     font-family: 'Lora';
 }
@@ -97,7 +97,7 @@ section.switch a:hover {
     color: rgb(235, 235, 235);
 }
 
-button {
+#button {
     position: relative;
     /* position: absolute;
     top: 20px;
@@ -112,17 +112,17 @@ button {
     align-items: center;
 }
 
-button:hover {
+#button:hover {
     background-color: orange;
     cursor: pointer;
 }
 
-button.switch {
+#button.switch {
     background-color: rgb(235, 235, 235);
     border-color: #333;
 }
 
-button.switch:hover {
+#button.switch:hover {
     background-color: coral;
     border: 1px coral solid;
 }
