@@ -6,6 +6,7 @@
     const banner = document.querySelector('#banner');
     const sections = document.querySelectorAll('section')
     const buttonCircle = document.getElementById('btnCircle');
+    const bookmark = document.getElementsByClassName('bookmark');
     const bookmarktriangle = document.getElementsByClassName('bookmarktri');
 
     let mode = 'dark';
@@ -25,6 +26,10 @@
                 tri.style.backgroundColor = 'white';
             }
 
+            for (const mark of bookmark){
+                mark.style.backgroundColor = '#332622';
+            }
+
             for (const section of sections) {
                 section.className = 'switch';
                 section.style.backgroundColor = 'white';
@@ -42,6 +47,10 @@
 
             for (const tri of bookmarktriangle){
                 tri.style.backgroundColor = '#b2a09b';
+            }
+
+            for (const mark of bookmark){
+                mark.style.backgroundColor = 'white';
             }
 
             for (const section of sections) {
