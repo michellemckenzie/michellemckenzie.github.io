@@ -6,13 +6,9 @@
     const banner = document.querySelector('#banner');
     const sections = document.querySelectorAll('section')
     const buttonCircle = document.getElementById('btnCircle');
-
     const bookmarktriangle = document.getElementsByClassName('bookmarktri');
 
- 
     let mode = 'dark';
-
-
 
     button.addEventListener('click', function() {
         if (mode === 'dark') {
