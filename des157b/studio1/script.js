@@ -24,7 +24,14 @@
     const l15 = document.getElementById('l15');
     const lines = [l6,l7,l8,l9];
 
+    
+
     const lyricProgress = setInterval(checkTime, 1000);
+
+    function replayLastClip(){
+        document.querySelector('video').currentTime = '19';
+        document.querySelector('video').play();
+    }
 
     function checkTime(){
         console.log(seconds);
@@ -32,6 +39,7 @@
         //stop setInterval from running once the videos are done
         if (seconds == 28){
             clearInterval(lyricProgress);
+            l11.addEventListener('click', replayLastClip);
             return;
         }
 
