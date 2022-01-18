@@ -124,8 +124,8 @@ section{
     to {opacity: 0;}
 }
 
-footer{
+#CSS{
+    font-size: larger;
     position: absolute;
-    bottom: 0;
-    z-index: 7;
+    top: 20px;
 }
