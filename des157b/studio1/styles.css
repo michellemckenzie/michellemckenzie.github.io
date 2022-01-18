@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Vollkorn';
+}
+
+#container{
+    display: flex;
+    max-width: 1366px;
+    max-height: 768px; 
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+section{
+    margin: 0;
+}
+
+#l1 {top: 30px; left: 30px;}
+
+#l2 {top: 70px;}
+
+#l3 {top: 110px;}
+
+#l2, #l3 {left: 45px;}
+
+#l4{
+    bottom: 30px;
+    right: 45px;
+}
+
+#l1, #l2, #l3, #l4 {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    opacity: 0;
+}
+
+#l5{
+    position: absolute;
+    font-size: 35px;
+    background-color: rgba(240, 248, 255, 0.514);
+    padding: 10px;
+    border-radius: 20px;
+    right: 130px;
+    top: 10px;
+    opacity: 0;
+}
+
+#l6, #l7, #l8, #l9{
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+}
+
+#l6{
+    left: 250px;
+    top: 250px;
+}
+
+#l7{
+    top: 180px;
+    left: 530px;
+}
+
+#l8{
+    top: 270px;
+    right: 600px;
+}
+
+#l9{
+    right: 300px;
+    top: 200px;
+}
+
+#l10, #l11, #l12, #l13, #l14, #l15{
+    position: absolute;
+    font-size: 20px;
+    opacity: 0;
+}
+
+#l10, #l11{
+    left: 500px;
+}
+
+#l12, #l13{
+    left: 700px;
+} 
+
+#l10{
+    top: 180px;
+    
+}
+
+#l11{
+    top: 210px;
+    cursor: pointer;
+}
+
+#l12{top: 300px;}
+
+#l13{top: 330px;}
+
+#l14{
+    left: 900px;
+    top: 420px;
+    color: rgb(194, 20, 20);
+}
+
+#l15{
+    left: 1100px;
+    top: 510px;
+}
+
+@keyframes fadein{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeout{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
