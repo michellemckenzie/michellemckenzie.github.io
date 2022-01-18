@@ -21,11 +21,18 @@
     const l15 = document.getElementById('l15');
     const lines = [l6,l7,l8,l9];
 
+    const video = document.querySelector('video');
+    const loading = document.getElementById('preloader');
+
+    video.addEventListener('playing', function() {
+        loading.style.display = 'none';
+    });
+
 
     const lyricProgress = setInterval(checkTime, 1000);
 
     function replayLastClip(){
-        document.querySelector('video').currentTime = '19';
+        video.currentTime = '19';
         document.querySelector('video').play();
     }
 
