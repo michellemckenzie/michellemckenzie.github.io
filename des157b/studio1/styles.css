@@ -123,3 +123,8 @@ section{
     from {opacity: 1;}
     to {opacity: 0;}
 }
+
+footer{
+    position: relative;
+    bottom: 0;
+}
