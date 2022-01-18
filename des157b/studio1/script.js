@@ -3,9 +3,6 @@
     console.log('reading js');
 
     let seconds = 0;
-
-    const video = document.querySelector('video');
-    const source = document.querySelector('source');
     
     const l1 = document.getElementById('l1');
     const l2 = document.getElementById('l2');
@@ -24,7 +21,6 @@
     const l15 = document.getElementById('l15');
     const lines = [l6,l7,l8,l9];
 
-    
 
     const lyricProgress = setInterval(checkTime, 1000);
 
@@ -80,7 +76,7 @@
         }
         else if(seconds == 17){
             for (var i = 0; i < 4; i++){
-                lines[i].style.animation = "2s fadeout forwards";
+                lines[i].style.animation = "1s fadeout forwards";
             }
         }
         else if (seconds == 19){
