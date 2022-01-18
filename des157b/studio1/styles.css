@@ -88,18 +88,11 @@ section{
     opacity: 0;
 }
 
-#l10, #l11{
-    left: 500px;
-}
+#l10, #l11{left: 500px;}
 
-#l12, #l13{
-    left: 700px;
-} 
+#l12, #l13{left: 700px;} 
 
-#l10{
-    top: 180px;
-    
-}
+#l10{top: 180px;}
 
 #l11{
     top: 210px;
