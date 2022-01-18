@@ -123,9 +123,3 @@ section{
     from {opacity: 1;}
     to {opacity: 0;}
 }
-
-#CSS{
-    font-size: larger;
-    position: absolute;
-    top: 20px;
-}
