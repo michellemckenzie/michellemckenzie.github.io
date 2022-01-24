@@ -12,6 +12,8 @@ body{
     max-height: 768px; 
     justify-content: center;
     align-items: center;
+
+    /* position: relative; */
 }
 
 video {
@@ -22,6 +24,10 @@ video {
 
 section{
     margin: 0;
+}
+
+p{
+    position: absolute;
 }
 
 #l1 {top: 30px; left: 30px;}
@@ -38,14 +44,12 @@ section{
 }
 
 #l1, #l2, #l3, #l4 {
-    position: absolute;
     color: white;
     font-size: 30px;
     opacity: 0;
 }
 
 #l5{
-    position: absolute;
     font-size: 35px;
     background-color: rgba(240, 248, 255, 0.514);
     padding: 10px;
@@ -56,7 +60,6 @@ section{
 }
 
 #l6, #l7, #l8, #l9{
-    position: absolute;
     color: white;
     font-size: 20px;
     opacity: 0;
@@ -83,7 +86,6 @@ section{
 }
 
 #l10, #l11, #l12, #l13, #l14, #l15{
-    position: absolute;
     font-size: 20px;
     opacity: 0;
 }
