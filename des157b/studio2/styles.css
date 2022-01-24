@@ -55,25 +55,11 @@ body{
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 1;
-
-    /* cover 1  */
-    /* background: linear-gradient(180deg, rgba(154,229,230,1) 0%, rgba(255,255,255,1) 100%); */
-
-    /* background: linear-gradient(180deg, rgba(209,255,183,1) 0%, rgba(255,255,255,1) 100%); */
-
-
-    /* cover3  */
-    /* background: linear-gradient(180deg, rgba(70,70,70,1) 0%, rgba(255,255,255,1) 100%); */
-
-    /* cover 4 */
-    /* background: linear-gradient(180deg, rgba(222,139,147,1) 0%, rgba(255,255,255,1) 100%); */
-
 }
 
 #photo{
     width: 200px;
     height: 200px;
-    background-color: blue;
     position: absolute;
     left: 100px;
     top: 60px;
@@ -83,12 +69,10 @@ body{
 #controls{
     width: 380px;
     height: 50px;
-    /* background-color: rgb(234, 0, 255); */
     position: absolute;
     left: 10px;
     top: 280px;
     display: flex;
-    /* justify-content:space-evenly; */
     align-items: center;
     z-index: 1;
 }
@@ -111,11 +95,11 @@ body{
 }
 
 #playlist{
-    height: 360px;
+    height: 370px;
     width: 410px;
     position: absolute;
     left: 10px;
-    top: 330px;
+    top: 340px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     z-index: 0;
@@ -131,10 +115,19 @@ body{
 }
 
 .songName{
-    font-size: 20px;
     margin-bottom: 0;
 }
 
 .artistName{
     margin-left: 25px;
+}
+
+h1{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h2{
+    font-size: 15px;
+    font-weight: 400;
 }
