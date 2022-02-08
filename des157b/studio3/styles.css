@@ -1,0 +1,70 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-content: center;
+    font-family: "Supermercado One";
+}
+
+h3{
+    font-family: "Nunito";
+    font-size: 3ch;
+}
+
+#title{
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    z-index: 1;
+}
+#fullpage{
+    background-color: aqua;
+    box-sizing: border-box;
+    position: relative;
+    width: 1366px;
+    height: 768px;
+}
+
+.class{
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f7edf0;
+    border-radius: 15px;
+    left: 5vw;
+    top: 15vh;
+}
+
+
+.rating{
+    position: absolute;
+    width: 500px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #f7edf0;
+    right: 5vw;
+    bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-star{
+    font-size: 85px;
+    width: 95px;
+    display: flex;
+    justify-content: center;
+}
+.checked{
+    color: orange;
+}
+
+.arrow{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 15px;
+    left: 658px;
+}

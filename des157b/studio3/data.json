@@ -1,0 +1,43 @@
+{
+    "class1":{
+        "course":"ecs 122a",
+        "title": "algorithm design and analysis",
+        "term":"fall 2020",
+        "rating": 2,
+        "professor": "yelena frid",
+        "desc": "This class taught me to just watch the lecture without taking notes because everything I wrote ended up getting crossed out in the end by the professor. Textbooks and online resources are the best way to learn. Lectures just tell you what to look up."
+    },
+    "class2":{
+        "course":"ecs 163",
+        "title": "information interfaces",
+        "term":"winter 2021",
+        "rating": 1,
+        "professor": "kwan-liu ma",
+        "desc": "Data viz is interesting, but knowing vanilla JS is a must to be able to understand D3.js and Vue.js at all. One of the hardest classes I’ve ever taken due to being so poorly prepared with no prereqs required for this course. The lectures were just showcases of the professor and his grad students' projects. The TA was the best though, and taught all of the material."
+    },
+    "class3":{
+        "course":"ecs 162",
+        "title": "web programming",
+        "term":"spring 2021",
+        "rating": 4,
+        "professor": "nina amenta",
+        "desc": "My first formal introduction to frontend and backend development. This was a fast paced class that taught me the basics of html, css, js, react, and mySQL. I wish there were more project designs that we could’ve implemented instead of using one example in 3 different ways. The mobile component was a great part of the class, and a realistic challenge. I really wish I had taken this class before ecs 163."
+    },
+    "class4":{
+        "course":"des 157a",
+        "title": "interactive media ii",
+        "term":"fall 2021",
+        "rating": 5,
+        "professor": "glenda drew",
+        "desc": "This was the first course that I was able to use my own creativity and bring them to life. The lectures are incredibly detailed with an abundance of examples to help students. This is also one of the smaller classes that UC Davis offers and you’re able to build connections with your peers for feedback, and have regular one-on-one meetings with the professor as well as the TAs for design and coding help."
+    },
+    "class5":{
+        "course":"pls 007",
+        "title": "just coffee",
+        "term":"fall 2021",
+        "rating": 4,
+        "professor": "dr. brown & dr. crump",
+        "desc": "Such an interesting class to learn beyond a cup of coffee. It explores the biology of coffee plants, agriculture, economics, and the harsh reality that small farmers and women face. The biggest take away from this class was that  "
+    }
+    
+ }
