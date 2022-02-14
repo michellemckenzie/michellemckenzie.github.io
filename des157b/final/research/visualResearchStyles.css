@@ -10,14 +10,16 @@ body{
 
 #container{
     width: 90vw;
-    height: 1100px;
+    height: 80vh;
     display: grid;
     grid-template-columns: repeat(4,20%);
-    column-gap: 7%;
+    column-gap: 5%;
     row-gap: 5%;
-    
 }
 
+img{
+    height:40vh;
+}
 
 
 h1{
