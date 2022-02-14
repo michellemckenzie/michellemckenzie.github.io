@@ -19,12 +19,13 @@ body{
 }
 
 section{
-    padding: 15px;
+    padding: 20px;
 }
 
 section p{
     text-align: justify;
     font-size: 1vw;
+    line-height: 2.5vh;
 }
 
 #title {
