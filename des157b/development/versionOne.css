@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    padding-left: 10vw;
+    flex-direction: column;
+    font-family: "Montserrat";
+}
+
+#main{
+    width: 100vw;
+   
+}
+
+.topics{
+    height: auto;
+    width: 100vw;
+    /* background-color: aqua; */
+}
+
+.images{
+    height: 23vh;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    justify-content: space-between;
+}
+
+.images img{
+    margin-right: 5vw;
+}
+
+#menuIcon{
+    height: 3vh;
+    margin-top: 1vh;
+    position: absolute; 
+    right: 2vw;
+}
+
+header{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.topics h1{
+    font-size: 3vh;
+}
+
