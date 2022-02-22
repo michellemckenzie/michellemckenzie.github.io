@@ -1,13 +1,12 @@
 body{
     display: flex;
-    padding-left: 10vw;
     flex-direction: column;
     font-family: "Montserrat";
 }
 
 #main{
-    width: 100vw;
-   
+    width: auto;
+    padding-left: 5vw;
 }
 
 .topics{
