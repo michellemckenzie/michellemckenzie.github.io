@@ -2,6 +2,8 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Montserrat";
+    width: 100vw;
+    overflow: hidden;
 }
 
 #main{
@@ -63,7 +65,17 @@ header{
     to{
         left: 55vw;
     }
-    
+}
+
+@keyframes menuDisappear {
+    from{
+        left: 55vw;
+        display: flex;
+    }
+    to{
+        left: 100vw;
+        display: none;
+    }
 }
 
 #menuOptions p{
@@ -71,7 +83,7 @@ header{
 }
 
 .fa-solid.fa-xmark{
-    position: fixed;
+    position: absolute;
     top: 4vh;
     right:7vw;
 }
@@ -88,7 +100,7 @@ section h1{
 }
 
 
-#upload label{
+label, textarea{
     display: inline-block;
     margin-bottom: 1vh;
 }

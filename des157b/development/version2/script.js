@@ -11,13 +11,13 @@
     let menuClose = document.querySelector('.fa-solid.fa-xmark');
     let mobileMenu = document.getElementById('menuOptions');
 
-    menuButton.addEventListener('touchstart', function(){
+    menuButton.addEventListener('click', function(){
         mobileMenu.style.display= "flex";
         mobileMenu.style.animation = "menuAppear 2s forwards";
     });
 
-    menuClose.addEventListener('touchstart', function(){
-        mobileMenu.style.display ="none";
+    menuClose.addEventListener('click', function(){
+        mobileMenu.style.animation = "menuDisappear 2s forwards";
     });
     
     
