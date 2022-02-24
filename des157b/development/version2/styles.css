@@ -2,7 +2,6 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Montserrat";
-    overflow: hidden;
 }
 
 #main{
@@ -51,9 +50,9 @@ header{
     position: absolute;
     top:0;
     padding: 15vw 5vw;
-    opacity:0;
+    display: none;
     left: 100vw;
-    display: flex;
+    
     flex-direction: column;
 }
 
