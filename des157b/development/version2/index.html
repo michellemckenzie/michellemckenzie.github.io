@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>version two</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Shizuru&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9965cbc942.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <header>
+        <h1 id = "title">collections</h1>
+        <i class="fa-solid fa-bars"></i>
+        <div id = "menuOptions">
+            <i class="fa-solid fa-xmark"></i>
+            <p>add your photo</p>
+            <p>about</p>
+        </div>
+    </header>
+
+   
+    
+
+    <section id = "main">
+        <section class = "topics">
+            <i class="fa-solid fa-shoe-prints"></i>
+            <h1>#shoes</h1>
+            
+            <section class = "images">
+                <img src = "images/shoes.jpg" alt = "hoka shoes">
+                <!-- <img src = "images/shoes.jpg" alt = "hoka shoes">
+                <img src = "images/shoes.jpg" alt = "hoka shoes">
+                <img src = "images/shoes.jpg" alt = "hoka shoes"> -->
+            </section>
+        </section>
+
+        <section class = "topics">
+            <h1>#bags</h1>
+            <section class = "images"></section>
+        </section>
+    </section>
+
+    <section id = "uploadPage">
+        <h1>add to the collections</h1>
+        <form id="upload">
+            <label for="fileupload">Upload an image</label>
+            <input type="file" id="fileupload">
+
+            <label for="title">Add a Title</label>
+            <input type="text" id="title">
+
+            <label for="desciption">Add a Description</label>
+            <textarea id="description"></textarea>
+
+            <input type="submit" value="send file">
+        </form>
+
+    </section>
+    
+</body>
+</html>
