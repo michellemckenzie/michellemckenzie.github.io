@@ -2,25 +2,22 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Montserrat";
-    width: 100vw;
 }
 
 #main{
-    width: auto;
     padding-left: 5vw;
+    box-sizing: border-box;
 }
 
 .topics{
-    height: auto;
-    width: 100vw;
     /* background-color: aqua; */
 }
 
 .images{
     height: 23vh;
     display: flex;
+    /* overflow: hidden; */
     overflow-x: scroll;
-    scrollbar-width: none;
     justify-content: space-between;
 }
 
@@ -46,4 +43,3 @@ header{
 .topics h1{
     font-size: 3vh;
 }
-
