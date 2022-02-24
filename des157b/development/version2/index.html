@@ -20,8 +20,9 @@
         <i class="fa-solid fa-bars"></i>
         <div id = "menuOptions">
             <i class="fa-solid fa-xmark"></i>
-            <p>add your photo</p>
-            <p>about</p>
+            <p id = "homeOption">collections</p>
+            <p id = "addOption">add your photo</p>
+            <p id = "aboutOption">about</p>
         </div>
     </header>
 
@@ -42,22 +43,22 @@
         </section>
 
         <section class = "topics">
+            <i class="fa-solid fa-bag-shopping"></i>
             <h1>#bags</h1>
             <section class = "images"></section>
         </section>
     </section>
 
     <section id = "uploadPage">
-        <h1>add to the collections</h1>
         <form id="upload">
             <label for="fileupload">Upload an image</label>
             <input type="file" id="fileupload" accept="image/png, image/jpeg, image/jpg, image/heic">
 
-            <label for="title">Your Name </label>
-            <input type="text" id="title">
+            <label for="name">Your Name </label>
+            <input type="text" id="name" required>
 
             <label for="description">Add a caption </label>
-            <textarea id="description" cols="8" rows="4"></textarea>
+            <textarea id="description"></textarea>
 
             <input type="submit" value="submit">
         </form>

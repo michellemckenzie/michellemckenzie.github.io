@@ -2,7 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Montserrat";
-    width: 100vw;
+    max-width: 100vw;
     overflow-x: hidden;
 }
 
@@ -48,7 +48,8 @@ header{
 #menuOptions{
     width: 35vw;
     height: 100vh;
-    background-color: aqua;
+    /* background-color: aqua; */
+    background-color: rgb(253, 249, 249);
     position: absolute;
     top:0;
     padding: 15vw 5vw;
@@ -96,16 +97,32 @@ section h1{
 
 #uploadPage{
     padding-left: 5vw;
-    background-color: aqua;
+    /* background-color: aqua; */
+    display: none;
 }
 
 
 label, textarea{
-    display: inline-block;
+    display: block;
     margin-bottom: 1vh;
 }
 
 #upload input{
     margin-bottom: 3vh;
     display: block;
+}
+
+#homeOption:hover, #addOption:hover, #aboutOption:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+textarea{
+    column-span: 10;
+}
+
+#name{
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: none;
 }
