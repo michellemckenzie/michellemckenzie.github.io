@@ -47,7 +47,7 @@ header{
     width: 35vw;
     height: 100vh;
     background-color: aqua;
-    position: absolute;
+    position: relative;
     top:0;
     padding: 15vw 5vw;
     display: none;
@@ -82,4 +82,16 @@ section h1{
 
 #uploadPage{
     padding-left: 5vw;
+    background-color: aqua;
+}
+
+
+#upload label{
+    display: inline-block;
+    margin-bottom: 1vh;
+}
+
+#upload input{
+    margin-bottom: 3vh;
+    display: block;
 }
