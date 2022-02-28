@@ -2,7 +2,11 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Montserrat";
-    max-width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header div{
     overflow-x: hidden;
 }
 
@@ -30,7 +34,8 @@ body{
 
 .fa-solid.fa-bars{
     position: absolute; 
-    right: 6vw;
+    top: 4vh;
+    right: 9vw;
 }
 
 header{
@@ -53,28 +58,38 @@ header{
     position: absolute;
     top:0;
     padding: 15vw 5vw;
-    display: none;
-    left: 100vw;
+    right:0;
+    
     
     flex-direction: column;
+
+    opacity: 0;
+    display: none;
+    transform: translateX(100%);
 }
 
 @keyframes menuAppear {
     from{
-        left: 100vw;
+        transform: translateX(100%);
+        opacity: 0;
+        display: none;
     }
     to{
-        left: 55vw;
+        transform: translateX(0);
+        opacity: 1;
+        display: flex;
     }
 }
 
 @keyframes menuDisappear {
     from{
-        left: 55vw;
+        transform: translateX(0);
+        opacity: 1;
         display: flex;
     }
     to{
-        left: 100vw;
+        transform: translateX(100%);
+        opacity: 0;
         display: none;
     }
 }
@@ -86,7 +101,7 @@ header{
 .fa-solid.fa-xmark{
     position: absolute;
     top: 4vh;
-    right:7vw;
+    right:9vw;
 }
 
 

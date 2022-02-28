@@ -11,13 +11,14 @@
     let uploadPage = document.getElementById('uploadPage');
     let menuButton = document.querySelector('.fa-solid.fa-bars');
     let menuClose = document.querySelector('.fa-solid.fa-xmark');
-    let mobileMenu = document.getElementById('menuOptions');
+    let mobileMenu = document.querySelector('#menuOptions');
     let addOption = document.getElementById('addOption');
     let homeOption = document.getElementById('homeOption');
 
     menuButton.addEventListener('click', function(){
-        mobileMenu.style.display= "flex";
+        
         mobileMenu.style.animation = "menuAppear 1.2s forwards";
+        mobileMenu.style.display = 'flex';
 
         addOption.addEventListener('click', function(){
             mainPage.style.display = "none";
