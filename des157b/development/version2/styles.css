@@ -10,14 +10,10 @@ header div{
     overflow-x: hidden;
 }
 
-#main{
+#mainPage{
     padding-left: 5vw;
     box-sizing: border-box;
     /* position: absolute; */
-}
-
-.topics{
-    /* background-color: aqua; */
 }
 
 .images{
@@ -40,10 +36,14 @@ header div{
 
 header{
     width: 100vw;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: sticky;
+    top:0;
+    left:0;
+    background-color: white;
 }
 
 .topics h1{
@@ -146,4 +146,9 @@ form{
     border-radius: 15px;
     padding: 5px;
     margin: 0;
+}
+
+#aboutPage{
+    display: none;
+    padding: 25px;
 }

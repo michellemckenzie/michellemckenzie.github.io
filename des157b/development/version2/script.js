@@ -7,13 +7,16 @@
     Parse.serverURL = 'https://parseapi.back4app.com/';
 
 
-    let mainPage = document.getElementById('main');
+    let mainPage = document.getElementById('mainPage');
     let uploadPage = document.getElementById('uploadPage');
+    let aboutPage = document.getElementById("aboutPage");
     let menuButton = document.querySelector('.fa-solid.fa-bars');
     let menuClose = document.querySelector('.fa-solid.fa-xmark');
     let mobileMenu = document.querySelector('#menuOptions');
     let addOption = document.getElementById('addOption');
     let homeOption = document.getElementById('homeOption');
+    let aboutOption = document.getElementById('aboutOption');
+    let currentPage = mainPage;
 
     menuButton.addEventListener('click', function(){
         
@@ -21,14 +24,23 @@
         
 
         addOption.addEventListener('click', function(){
-            mainPage.style.display = "none";
+            currentPage.style.display = "none";
             uploadPage.style.display = "flex";
+            currentPage = uploadPage;
             closeMenu();
         });
 
         homeOption.addEventListener('click', function(){
+            currentPage.style.display = "none";
             mainPage.style.display = "block";
-            uploadPage.style.display = "none";
+            currentPage = mainPage;
+            closeMenu();
+        });
+
+        aboutOption.addEventListener('click', function(){
+            currentPage.style.display = "none";
+            aboutPage.style.display = "block";
+            currentPage = aboutPage;
             closeMenu();
         });
     });
