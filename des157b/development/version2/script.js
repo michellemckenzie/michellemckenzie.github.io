@@ -17,7 +17,7 @@
 
     menuButton.addEventListener('click', function(){
         
-        mobileMenu.style.animation = "menuAppear 1.2s forwards";
+        mobileMenu.style.animation = "menuAppear 1s forwards";
         
 
         addOption.addEventListener('click', function(){
@@ -36,7 +36,7 @@
     menuClose.addEventListener('click', closeMenu);
     
     function closeMenu(){
-        mobileMenu.style.animation = "menuDisappear 1.2s forwards";
+        mobileMenu.style.animation = "menuDisappear 1s forwards";
     }
     
 

@@ -54,15 +54,23 @@
     <section id = "uploadPage">
         <form id="upload">
             <label for="fileupload">Upload an image</label>
-            <input type="file" id="fileupload" accept="image/png, image/jpeg, image/jpg, image/heic">
+            <input type="file" id="fileupload" accept="image/png, image/jpeg, image/jpg, image/heic" required>
+
+            <label for="category">Choose a category:</label>
+            <select name="category" id="category" required>
+                <option value="shoes">shoes</option>
+                <option value="bags">bags</option>
+                <option value="animals">animals</option>
+                <option value="uc davis">uc davis</option>
+            </select>
 
             <label for="name">Your Name </label>
             <input type="text" id="name" required>
 
-            <label for="description">Add a caption </label>
-            <textarea id="description"></textarea>
+            <label for="description">Add a caption (optional) </label>
+            <textarea id="description" cols = "5" rows = "6"></textarea>
 
-            <input type="submit" value="submit">
+            <input type="submit" value="submit" id = "submit">
         </form>
 
     </section>
