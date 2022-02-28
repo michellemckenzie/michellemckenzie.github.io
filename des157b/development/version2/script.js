@@ -61,7 +61,7 @@
             console.log(type)
             console.log(description);
 
-            if(size < 100000 && type == 'image/jpeg' || type == 'image/png' || type == 'image/webp' || type == 'image/heic'){
+            if(size < 500000 && type == 'image/jpeg' || type == 'image/png' || type == 'image/webp' || type == 'image/heic'){
               uploadPhoto(name, file, description, fileName);
             } else {
               alert('the file is too big or is not a .jpg or .png file');
