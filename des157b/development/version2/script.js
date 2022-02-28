@@ -18,7 +18,7 @@
     menuButton.addEventListener('click', function(){
         
         mobileMenu.style.animation = "menuAppear 1.2s forwards";
-        mobileMenu.style.display = 'flex';
+        
 
         addOption.addEventListener('click', function(){
             mainPage.style.display = "none";

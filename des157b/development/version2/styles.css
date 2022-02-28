@@ -2,8 +2,8 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Montserrat";
-    width: 100%;
-    overflow-x: hidden;
+    width: 100vw;
+    overflow: hidden;
 }
 
 header div{
@@ -60,37 +60,27 @@ header{
     padding: 15vw 5vw;
     right:0;
     
-    
+    display: flex;
     flex-direction: column;
 
-    opacity: 0;
-    display: none;
     transform: translateX(100%);
 }
 
 @keyframes menuAppear {
     from{
         transform: translateX(100%);
-        opacity: 0;
-        display: none;
     }
     to{
         transform: translateX(0);
-        opacity: 1;
-        display: flex;
     }
 }
 
 @keyframes menuDisappear {
     from{
         transform: translateX(0);
-        opacity: 1;
-        display: flex;
     }
     to{
         transform: translateX(100%);
-        opacity: 0;
-        display: none;
     }
 }
 
