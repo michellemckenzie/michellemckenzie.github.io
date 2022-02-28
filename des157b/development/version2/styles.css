@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     font-family: "Montserrat";
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header div{
