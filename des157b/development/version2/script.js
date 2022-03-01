@@ -18,6 +18,8 @@
     let aboutOption = document.getElementById('aboutOption');
     let currentPage = mainPage;
 
+    // render photos from b4a onto the html page into the respective categories
+
     menuButton.addEventListener('click', function(){
         
         mobileMenu.style.animation = "menuAppear 1s forwards";
