@@ -1,0 +1,38 @@
+body{
+    font-family: 'Montserrat';
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#container{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+p{
+    width: 400px;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: justify;
+    line-height: 1.4em;
+}
+
+#updates{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+#updateContent{
+    background-color: rgb(245, 243, 240);
+    width: 700px;
+    height: 420px;
+}
+
+.updateParagraph{
+    width: auto;
+}
