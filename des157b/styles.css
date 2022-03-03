@@ -190,9 +190,9 @@ main section:hover .bookmark{
 
 @keyframes showbookmark{
     from{
-        bottom: 410px;
+        bottom: 435px;
     }
     to{
-        bottom: 375px;
+        bottom: 407px;
     }
 }
