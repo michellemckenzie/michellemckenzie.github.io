@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>version three</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Shizuru&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9965cbc942.js" crossorigin="anonymous"></script>
+    <!--/ /-------- Load Parse Library --------/ /-->
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+    <script src="https://cdn.cloudmersive.com/jsclient/cloudmersive-document-convert-client.js"></script>
+    
+    
+    
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <header>
+        <h1 id = "title">collections</h1>
+        <i class="fa-solid fa-bars"></i>
+    </header>
+    
+    <div id = "menuOptions">
+        <i class="fa-solid fa-xmark"></i>
+        <p id = "homeOption">collections</p>
+        <p id = "addOption">add your photo</p>
+        <p id = "aboutOption">about</p>
+    </div>
+
+    <section id = "mainPage">
+        <section id = "shoes">
+            <i class="fa-solid fa-shoe-prints"></i>
+            <h1>#shoes</h1>
+            
+            <div class = "images">
+                <!-- place holder image, must render full gallery with JS  -->
+            </div>
+        </section>
+
+        <section id = "animals">
+            <i class="fa-solid fa-paw"></i>
+            <h1>#animals</h1>
+            <div class = "images"></div>
+        </section>
+
+        <!-- more topics to be added shortly -->
+    </section>
+
+    <section id = "uploadPage">
+        <form id="upload">
+            <label for="fileupload">Upload an image</label>
+            <input type="file" id="fileupload" accept="image/jpg, image/png, image/heic, imgae/heif" required>
+
+            <label for="category">Choose a category:</label>
+            <select name="category" id="category" required>
+                <option value="shoes">shoes</option>
+                <!-- <option value="bags">bags</option> -->
+                <option value="animals">animals</option>
+                <!-- <option value="uc davis">uc davis</option> -->
+            </select>
+
+            <label for="name">Your Name </label>
+            <input type="text" id="name" required>
+
+            <label for="description">Add a caption (optional) </label>
+            <textarea id="description" cols = "5" rows = "6"></textarea>
+
+            <input type="submit" value="submit" id = "submit">
+        </form>
+
+        <div id="uploaded-img"></div>
+
+    </section>
+
+    <section id = "aboutPage">
+        <p> &#128075; hi, i'm michelle!</p>
+        <p>i'm a senior cs student &#128187; @ uc davis &#128046;</p>
+        <p>this project is a way for the community to upload their own personal photos &#128247; to create a collective photo gallery</p>
+        <p>our belongings tell a story about ourselves and can create conversation about small slices of our lives</p>
+        <p>collections aims to highlight the little pieces that we carry with ourselves and share them in a beautiful display &#127799;</p>
+        <p>share your story! &#128242;</p>
+    </section>
+    
+</body>
+</html>

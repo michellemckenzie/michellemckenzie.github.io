@@ -1,0 +1,154 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat";
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+header div{
+    overflow-x: hidden;
+}
+
+#mainPage{
+    padding-left: 5vw;
+    box-sizing: border-box;
+    /* position: absolute; */
+}
+
+.images{
+    height: 23vh;
+    display: flex;
+    overflow: hidden;
+    /* overflow-x: scroll; */
+    justify-content: space-between;
+}
+
+.images img{
+    margin-right: 5vw;
+}
+
+.fa-solid.fa-bars{
+    position: absolute; 
+    top: 4vh;
+    right: 9vw;
+}
+
+header{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top:0;
+    left:0;
+    background-color: white;
+}
+
+.topics h1{
+    font-size: 3vh;
+}
+
+#menuOptions{
+    width: 35vw;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-color: rgb(253, 249, 249);
+    position: absolute;
+    top:0;
+    padding: 15vw 5vw;
+    right:0;
+    
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(100%);
+}
+
+@keyframes menuAppear {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes menuDisappear {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+#menuOptions p{
+    display: inline-block;
+}
+
+.fa-solid.fa-xmark{
+    position: absolute;
+    top: 4vh;
+    right:9vw;
+}
+
+
+section h1{
+    display: inline-block;
+    margin: 15px;
+}
+
+#uploadPage{
+    padding-left: 5vw;
+    /* background-color: aqua; */
+    display: none;
+}
+
+
+label, textarea{
+    display: block;
+    margin-bottom: 1vh;
+}
+
+input, select{
+    margin-bottom: 3vh;
+    display: block;
+}
+
+#homeOption:hover, #addOption:hover, #aboutOption:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+#name, select{
+    padding: 7px;
+}
+
+select{
+    width: 130px;
+}
+
+form{
+    width: 80vw;
+    box-sizing:content-box;
+    padding: 5vw;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+}
+
+#submit{
+    align-items: center;
+    width: 30vw;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 0;
+}
+
+#aboutPage{
+    display: none;
+    padding: 25px;
+}

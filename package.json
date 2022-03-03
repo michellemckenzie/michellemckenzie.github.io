@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "granim": "^2.0.0"
+    "fs": "^0.0.1-security",
+    "granim": "^2.0.0",
+    "heic-convert": "^1.2.4",
+    "require": "^2.4.20",
+    "requirejs": "^2.3.6",
+    "util": "^0.12.4"
   }
 }
