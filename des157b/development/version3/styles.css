@@ -2,7 +2,6 @@ body{
     display: flex;
     flex-direction: column;
     font-family: "Montserrat";
-    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -19,8 +18,7 @@ header div{
 .images{
     height: 23vh;
     display: flex;
-    overflow: hidden;
-    width: 100vw;
+    overflow-y: hidden;
     overflow-x: scroll;
     justify-content: space-between;
 }
@@ -29,61 +27,44 @@ header div{
     margin-right: 5vw;
 }
 
-.fa-solid.fa-bars{
-    position: absolute; 
-    top: 4vh;
-    right: 9vw;
-}
 
 header{
-    width: 100vw;
+    /* width: 100vw; */
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     position: sticky;
     top:0;
     left:0;
     background-color: white;
 }
 
-.topics h1{
-    font-size: 3vh;
-}
 
-#menuOptions{
-    width: 35vw;
+#menu{
+    width: 40vw;
     height: 100vh;
     /* background-color: aqua; */
     background-color: rgb(253, 249, 249);
-    position: absolute;
+    position: fixed;
     top:0;
-    padding: 15vw 5vw;
     right:0;
+
+    box-sizing: border-box;
+    padding: 15vw 5vw;
+    
     
     display: flex;
     flex-direction: column;
 
-    transform: translateX(100%);
+    transform: translateX(40vw);
+    transition: transform .8s;
 }
 
-@keyframes menuAppear {
-    from{
-        transform: translateX(100%);
-    }
-    to{
-        transform: translateX(0);
-    }
+#menu.show{
+    transform: translateX(0);
 }
 
-@keyframes menuDisappear {
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(100%);
-    }
-}
 
 #menuOptions p{
     display: inline-block;
@@ -96,9 +77,10 @@ header{
 }
 
 
-section h1{
+section h2{
     display: inline-block;
     margin: 15px;
+    text-decoration: underline;
 }
 
 #uploadPage{
@@ -153,3 +135,41 @@ form{
     display: none;
     padding: 25px;
 }
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #loadingScreen{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(26, 25, 25, 0.356);
+      display: none;
+  }
+
+  section section{
+      margin-bottom: 20px;
+  }
+
+  #shoePage{
+      display: none;
+  }
+
+  .fa-solid.fa-angle-left{
+      /* display: none; */
+  }

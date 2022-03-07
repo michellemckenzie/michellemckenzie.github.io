@@ -11,10 +11,11 @@
     <!--/ /-------- Load Parse Library --------/ /-->
     <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 
+    <!-- Load HEIC/HEIF to JPG conversion  -->
     <script src="https://unpkg.com/convertapi-js/lib/convertapi.js"></script>
 
-    
-    
+     <!--/ /-------- Load Jimp Library --------/ /-->
+     <script src="https://unpkg.com/jimp@0.14.0/browser/lib/jimp.js"></script>
     
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
@@ -22,11 +23,12 @@
 <body>
     
     <header>
+        <i class="fa-solid fa-angle-left"></i>
         <h1 id = "title">collections</h1>
         <i class="fa-solid fa-bars"></i>
     </header>
     
-    <div id = "menuOptions">
+    <div id = "menu">
         <i class="fa-solid fa-xmark"></i>
         <p id = "homeOption">collections</p>
         <p id = "addOption">add your photo</p>
@@ -34,28 +36,37 @@
     </div>
 
     <section id = "mainPage">
-        <section id = "shoes">
+        <div id = "shoes">
             <i class="fa-solid fa-shoe-prints"></i>
-            <h1>#shoes</h1>
+            <h2>#shoes</h2>
             
-            <div class = "images">
-                <!-- place holder image, must render full gallery with JS  -->
-            </div>
-        </section>
-
-        <section id = "animals">
-            <i class="fa-solid fa-paw"></i>
-            <h1>#animals</h1>
             <div class = "images"></div>
-        </section>
+        </div>
 
-        <!-- more topics to be added shortly -->
+        <div id = "animals">
+            <i class="fa-solid fa-paw"></i>
+            <h2>#animals</h2>
+            <div class = "images"></div>
+        </div>
+
+        <div id = "food">
+            <i class="fa-solid fa-utensils"></i>
+            <h2>#food</h2>
+            <div class = "images"></div>
+        </div>
+
+       
+        <div id = "nature">
+            <i class="fa-solid fa-seedling"></i>
+            <h2>#nature</h2>
+            <div class = "images"></div>
+        </div>
     </section>
 
     <section id = "uploadPage">
         <form id="upload">
-            <label for="fileupload">Upload an image</label>
-            <input type="file" id="fileupload" accept="image/jpg, image/png, image/heic, imgae/heif" required>
+            <label for="fileupload"> Upload an image <i class="fa-regular fa-image"></i> </label>
+            <input type="file" id="fileupload" accept="image/jpg, image/png, image/heic, image/heif" required>
 
             <label for="category">Choose a category:</label>
             <select name="category" id="category" required>
@@ -72,9 +83,17 @@
             <textarea id="description" cols = "5" rows = "6"></textarea>
 
             <input type="submit" value="submit" id = "submit">
-        </form>
 
-        <div id="uploaded-img"></div>
+            <div id="resized-img"><img src=""></div>
+            <div id="square-img"><img src=""></div>
+            
+        </form>
+        
+        <div id = "loadingScreen">
+            <div class="loader"></div>
+        </div>
+
+       
 
     </section>
 
@@ -84,8 +103,14 @@
         <p>this project is a way for the community to upload their own personal photos &#128247; to create a collective photo gallery</p>
         <p>our belongings tell a story about ourselves and can create conversation about small slices of our lives</p>
         <p>collections aims to highlight the little pieces that we carry with ourselves and share them in a beautiful display &#127799;</p>
-        <p>share your story! &#128242;</p>
+        <p>add your photo! &#128242;</p>
     </section>
     
+    <div id = "shoePage">
+        <h2>#shoes lala</h2>
+    </div>
+    <div id = "foodPage"></div>
+    <div id = "animalPage"></div>
+    <div id = "davisPage"></div>
 </body>
 </html>
