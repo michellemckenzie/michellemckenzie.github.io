@@ -79,7 +79,6 @@ header{
 
 
 section h2{
-    display: inline-block;
     margin:0;
     /* text-decoration: underline; */
     color: white;
@@ -87,6 +86,10 @@ section h2{
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
     padding: 10px;
+}
+
+h2{
+    display: inline-block;
 }
 
 #uploadPage{
@@ -174,18 +177,17 @@ form{
 
   #shoePage, #foodPage, #animalPage, #naturePage{
       display: none;
+      padding: 5vw;
   }
 
   .fa-solid.fa-angle-left{
       visibility: hidden;
   }
 
-  .grid{
-      display: none;
-  }
+
   
   .grid-item { 
-      width: 200px;
+      width: 160px;
     }
 
     .grid-item img{
@@ -202,6 +204,10 @@ form{
       /* padding-left: 15px; */
       margin-bottom: 20px;
   }
+
+  #shoePage h2, #animalPage h2, #foodPage h2, #naturePage h2{
+      margin-left: 10px;
+}
 
   #shoes{
     background-image: url("images/shoeThumbnail.jpg");

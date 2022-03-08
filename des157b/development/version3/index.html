@@ -21,6 +21,7 @@
 
      <!-- load masonry -->
      <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
@@ -40,7 +41,7 @@
         <p id = "aboutOption">about</p>
     </div>
 
-    <div class="grid">
+    <!-- <div class="grid">
         <div class="grid-item"><img src = "images/birks.jpg" alt = "shoes"></div>
         <div class="grid-item"><img src = "images/nike.jpg" alt = "shoes"></div>
         <div class="grid-item"><img src = "images/blunnies.jpg" alt = "shoes"></div>
@@ -48,29 +49,24 @@
         <div class="grid-item"><img src = "images/boots.jpg" alt = "shoes"></div>
         <div class="grid-item"><img src = "images/shoes.jpg" alt = "shoes"></div>
 
-
         <div class="grid-item grid-item--width2"></div>
-      </div>
+      </div> -->
     
     <section id = "mainPage">
         <div id = "shoes">
-            <!-- <i class="fa-solid fa-shoe-prints"></i> -->
             <h2>#shoes</h2>
         </div>
 
         <div id = "animals">
-            <!-- <i class="fa-solid fa-paw"></i> -->
             <h2>#animals</h2>
         </div>
 
         <div id = "food">
-            <!-- <i class="fa-solid fa-utensils"></i> -->
             <h2>#food</h2>
         </div>
 
        
         <div id = "nature">
-            <!-- <i class="fa-solid fa-seedling"></i> -->
             <h2>#nature</h2>
         </div>
     </section>
@@ -82,17 +78,17 @@
 
             <label for="category">Choose a category:</label>
             <select name="category" id="category" required>
-                <option value="shoes">shoes</option>
-                <!-- <option value="bags">bags</option> -->
-                <option value="animals">animals</option>
-                <!-- <option value="uc davis">uc davis</option> -->
+                <option value="shoe">shoes</option>
+                <option value="animal">animals</option>
+                <option value="food">food</option>
+                <option value="nature">nature</option>
             </select>
-
+<!-- 
             <label for="name">Your Name </label>
             <input type="text" id="name" required>
 
             <label for="description">Add a caption (optional) </label>
-            <textarea id="description" cols = "5" rows = "6"></textarea>
+            <textarea id="description" cols = "5" rows = "6"></textarea> -->
 
             <input type="submit" value="submit" id = "submit">
 
@@ -119,16 +115,25 @@
     </section>
     
     <div id = "shoePage">
-        <h2>#shoes lala</h2>
+        <i class="fa-solid fa-shoe-prints"></i>
+        <h2>shoes</h2>
+
+        <div class="grid"></div>
     </div>
     <div id = "foodPage">
-        <p>food</p>
+        <i class="fa-solid fa-utensils"></i>
+        <h2>food</h2>
+        <div class="grid"></div>
     </div>
     <div id = "animalPage">
-        <p>animal</p>
+        <i class="fa-solid fa-paw"></i>
+        <h2>animal</h2>
+        <div class="grid"></div>
     </div>
     <div id = "naturePage">
-        <p>nature</p>
+        <i class="fa-solid fa-seedling"></i>
+        <h2>nature</h2>
+        <div class="grid"></div>
     </div>
 </body>
 </html>

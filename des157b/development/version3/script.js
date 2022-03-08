@@ -1,15 +1,11 @@
 (function(){
 
     'use strict';
-    
-    
     console.log('reading js');
 
     Parse.initialize("hJiXQ6wc2TdRMkGA54o1NCiwXXLgWYH1jZD2Ej9G","skZpewzy0S51fkiUHbs9qjXncb4xXY2KfWbw2VKd");
     // Parse server
     Parse.serverURL = 'https://parseapi.back4app.com/';
-
-
 
   
     let menuButton = document.querySelector('.fa-solid.fa-bars');
@@ -38,6 +34,8 @@
     let naturePage = document.getElementById('naturePage');
     let currentPage = mainPage;
 
+    let loadingScreen = document.querySelector('#loadingScreen');
+
     let links = [shoeLink, animalLink, foodLink, natureLink];
     let pages = [shoePage,animalPage, foodPage, naturePage];
 
@@ -47,7 +45,6 @@
       backBtn.style.visibility = 'hidden';
       mainPage.style.display = 'block';
       currentPage = mainPage;
-      document.querySelector('.grid').style.display = 'none';
       
     });
 
@@ -57,7 +54,6 @@
         pages[i].style.display = 'block';
         currentPage = pages[i];
         backBtn.style.visibility = 'visible';
-        document.querySelector('.grid').style.display = 'inline';
       });
     }
     
@@ -111,8 +107,6 @@
         event.preventDefault();
     
         const fileUploadControl = document.querySelector('#fileupload');
-        const nameUploadControl = document.querySelector('#name');
-        const descriptionUploadControl = document.querySelector('#description');
         const selectedCategory = document.querySelector('#category');
     
         // this is a good place to collect data from the other fields
@@ -120,49 +114,44 @@
             let file = fileUploadControl.files[0];
             let fileName = fileUploadControl.files[0].name;
             const type = fileUploadControl.files[0].type;
-            const size = fileUploadControl.files[0].size;
-            const name = nameUploadControl.value;
-            const description = descriptionUploadControl.value;
+            // const size = fileUploadControl.files[0].size;
             const category = selectedCategory.value;
-            const convertedImg = false;
 
             if (type == "image/heic" || type == "image/heif"){
-              convertPhoto(file);
+              convertPhoto(file, category);
             }
             else{
               const fileAsDataURL = window.URL.createObjectURL(file);
-              handleImg(fileAsDataURL);
+              handleImg(fileAsDataURL, category, fileName);
               // uploadPhoto(name, file, description, fileName, category, convertedImg);
             }
         } 
     });
 
-    async function uploadPhoto(name, fileName, file, description, category, isResized){
+    async function uploadPhoto(fileName, file, category, isResized){
       const photo = new Parse.Object('uploads');
       
-      
-
       if (isResized){
-        photo.set('image', new Parse.File(fileName, { base64: resizedFile }));
+        photo.set('image', new Parse.File(fileName, { base64: file }));
       }
       else{
         photo.set('image', new Parse.File(fileName, file));
       }
 
-      photo.set('name', name);
-      photo.set('description', description);
       photo.set('category',category);
 
 
       //This is a good place to save data from the other fields to the database
       try {
-        let loadingScreen = document.querySelector('#loadingScreen');
+        
         loadingScreen.style.display = 'flex';
-        const result = await newPhoto.save();
+        const result = await photo.save();
         console.log(result.id);
         getNewPhoto(result.id);
+
         loadingScreen.style.display='none';
         console.log('success!');
+
         clearForm();
       } catch (error) {
         console.error('Error while uploading the photo: ', error);
@@ -191,8 +180,9 @@
       }
       
       function showUploadedPhoto(photoURL,photoCategory){
-        let html = `<img src="${photoURL}">`;
-        document.querySelector(`#${photoCategory} .images`).innerHTML += html;
+        console.log(photoCategory, "Page");
+        let html = `<div class = "grid-item"> <img src="${photoURL}" alt = "${photoCategory}"> </div>`;
+        document.querySelector(`#${photoCategory}Page .grid`).innerHTML += html;
       }
       
       // This is a good place to write a function that clears out the form.
@@ -209,14 +199,8 @@
           const results = await query.find();
           for (let i = results.length-1; i >= 0; i--){
 
-            let photoURL;
-
-            if (results[i].get('image') === undefined){
-              photoURL = results[i].get('convertedImage');
-            }
-            else{
-              photoURL = results[i].get('image').url();
-            }
+            let photoURL = results[i].get('image').url();
+            console.log(photoURL);
             
             let photoCategory = results[i].get('category');
             showUploadedPhoto(photoURL, photoCategory);
@@ -224,51 +208,75 @@
         } catch (error) {
             console.error('Error while getting photo', error);
         } 
+
+        let html = '<div class="grid-item grid-item--width2"></div>';
+        document.querySelector(`#shoePage .grid`).innerHTML += html;
+        document.querySelector(`#animalPage .grid`).innerHTML += html;
+        document.querySelector(`#foodPage .grid`).innerHTML += html;
+        document.querySelector(`#naturePage .grid`).innerHTML += html;
+
+        var grid = document.querySelector('.grid');
+        var msnry = new Masonry( grid, {
+          // options
+          itemSelector: '.grid-item',
+          gutter: 10,
+        });
+
+        imagesLoaded( grid ).on( 'progress', function() {
+          // layout Masonry after each image loads
+          msnry.layout();
+        });
+
       }
 
-      async function convertPhoto(file){
+      async function convertPhoto(file, category){
         let convertApi = ConvertApi.auth({secret: 'HDy3UHldQEvnxgbY'});
         let params = convertApi.createParams();
         params.add('file', file);
+        loadingScreen.style.display = 'flex';
         let result = await convertApi.convert('heic', 'jpg', params);
+        loadingScreen.style.display = 'none';
 
         // Get result file URL
         let url = result.files[0];
 
-        handleImg(url.Url);
+        handleImg(url.Url, category, url.FileName);
       //  uploadPhoto("michelle", url.Url, "my desc", url.FileName, "dog", convertedImg);
       }
 
-      async function handleImg(imageUrl){
+      async function handleImg(imageUrl, category, filename){
+       
         const dimensions = await getHeightAndWidthFromDataUrl(imageUrl);
-        resizeImg(imageUrl, dimensions);
+        resizeImg(imageUrl, dimensions, category, filename);
       }
 
 
-      async function resizeImg(imageUrl, dimensions){
-    
-        // make a square thumbnail for any image...
-        const image = await Jimp.read(imageUrl);
-        let squareThumbnail = resizePhoto(image, 250, 250);
-
+      async function resizeImg(imageUrl, dimensions, category, filename){
+        loadingScreen.style.display = 'flex';
         let resizedImg;
-        const image2 = await Jimp.read(imageUrl);
+        let isResized = false;
+        const image = await Jimp.read(imageUrl);
 
         let optimizeLandscapeWidth = 330;
         let optimizePortraitHeight = 450;
 
         if (dimensions.height > dimensions.width && dimensions.height > 450){
-          resizedImg = resizePhoto(image2, Jimp.AUTO, optimizePortraitHeight);
+          resizedImg = resizePhoto(image, Jimp.AUTO, optimizePortraitHeight);
+          isResized = true;
         }
         else if ((dimensions.height < dimensions.width || dimensions.height == dimensions.width) && dimensions.width > 330){
-          resizedImg = resizePhoto(image2, optimizeLandscapeWidth, Jimp.AUTO);
+          resizedImg = resizePhoto(image, optimizeLandscapeWidth, Jimp.AUTO);
+          isResized = true;
         }
         else{
           resizeImg = imageUrl;
         }
 
+        loadingScreen.style.display = 'none';
+
+        uploadPhoto(filename, resizedImg, category, isResized);
         document.querySelector('#resized-img img').src = resizedImg;
-        document.querySelector('#square-img img').src = squareThumbnail;
+        
       }
     
       const getHeightAndWidthFromDataUrl = dataURL => new Promise(resolve => {
@@ -293,15 +301,14 @@
         return newImg;
       }
 
-      window.onload = () => {
-        var elem = document.querySelector('.grid');
-        var msnry = new Masonry( elem, {
-          // options
-          itemSelector: '.grid-item',
-          gutter: 11,
-        });
-  
-      }
+      // window.onload = () => {
+      //   var elem = document.querySelector('.grid');
+      //   var msnry = new Masonry( elem, {
+      //     // options
+      //     itemSelector: '.grid-item',
+      //     gutter: 11,
+      //   });
+      // }
     
 
       
