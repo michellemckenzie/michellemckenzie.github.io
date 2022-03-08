@@ -162,14 +162,11 @@
         const records = Parse.Object.extend('uploads');
         const query = new Parse.Query(records);
         console.log(query);
-        // query.equalTo("objectId", photoId);
+        query.equalTo("objectId", photoId);
         try{
           const results = await query.find();
-          console.log(results);
-          // const photoURL = results[0].get('file').url();
-          const photoTitle = results[0].get('name');
-          const photoDescription = results[0].get('description');
-          // let photoCategory = results[i].get('category');
+          const photoURL = results[0].get('image').url();
+          let photoCategory = results[0].get('category');
           // This is a good place to get data from the database fields
           showUploadedPhoto(photoURL, photoCategory);
           // This is a good place to run a function that clears out the form, which you will write below.
