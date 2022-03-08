@@ -275,7 +275,6 @@
         loadingScreen.style.display = 'none';
 
         uploadPhoto(filename, resizedImg, category, isResized);
-        document.querySelector('#resized-img img').src = resizedImg;
         
       }
     
