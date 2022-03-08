@@ -1,5 +1,7 @@
 (function(){
+
     'use strict';
+    
     
     console.log('reading js');
 
@@ -9,25 +11,56 @@
 
 
 
-    let mainPage = document.getElementById('mainPage');
-    let uploadPage = document.getElementById('uploadPage');
-    let aboutPage = document.getElementById("aboutPage");
+  
     let menuButton = document.querySelector('.fa-solid.fa-bars');
     let menuClose = document.querySelector('.fa-solid.fa-xmark');
     let menu = document.querySelector('#menu');
+
     let addOption = document.getElementById('addOption');
     let homeOption = document.getElementById('homeOption');
     let aboutOption = document.getElementById('aboutOption');
-    let currentPage = mainPage;
-    let title = document.querySelector('#title');
-    let shoeLink = document.querySelector('#shoes h2');
-    let shoePage = document.getElementById('shoePage');
 
-    shoeLink.addEventListener('click', function(){
-      shoePage.style.display = 'block';
+    let backBtn = document.querySelector('.fa-solid.fa-angle-left');
+
+    let title = document.querySelector('#title');
+
+    let shoeLink = document.querySelector('#shoes');
+    let foodLink = document.querySelector('#food');
+    let natureLink = document.querySelector('#nature');
+    let animalLink = document.querySelector('#animals');
+
+    let mainPage = document.getElementById('mainPage');
+    let uploadPage = document.getElementById('uploadPage');
+    let aboutPage = document.getElementById("aboutPage");
+    let shoePage = document.getElementById('shoePage');
+    let foodPage = document.getElementById('foodPage');
+    let animalPage = document.getElementById('animalPage');
+    let naturePage = document.getElementById('naturePage');
+    let currentPage = mainPage;
+
+    let links = [shoeLink, animalLink, foodLink, natureLink];
+    let pages = [shoePage,animalPage, foodPage, naturePage];
+
+
+    backBtn.addEventListener('click', function(){
       currentPage.style.display = 'none';
-      currentPage = shoePage;
+      backBtn.style.visibility = 'hidden';
+      mainPage.style.display = 'block';
+      currentPage = mainPage;
+      document.querySelector('.grid').style.display = 'none';
+      
     });
+
+    for (let i = 0; i < links.length; i++){
+      links[i].addEventListener('click', function(){
+        currentPage.style.display = 'none';
+        pages[i].style.display = 'block';
+        currentPage = pages[i];
+        backBtn.style.visibility = 'visible';
+        document.querySelector('.grid').style.display = 'inline';
+      });
+    }
+    
 
     title.addEventListener('click', function(){
       if(currentPage != mainPage){
@@ -259,6 +292,17 @@
         });
         return newImg;
       }
+
+      window.onload = () => {
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+          // options
+          itemSelector: '.grid-item',
+          gutter: 11,
+        });
+  
+      }
+    
 
       
 
