@@ -217,6 +217,8 @@
             // options
             itemSelector: '.grid-item',
             gutter: 13,
+            columnWidth: 170,
+            fitWidth: true,
           });
   
           imagesLoaded( g ).on( 'progress', function() {
