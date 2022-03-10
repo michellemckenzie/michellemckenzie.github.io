@@ -37,7 +37,7 @@
     let loadingScreen = document.querySelector('#loadingScreen');
 
     let links = [shoeLink, animalLink, foodLink, natureLink];
-    let pages = [shoePage,animalPage, foodPage, naturePage];
+    let pages = [shoePage, animalPage, foodPage, naturePage];
 
 
     backBtn.addEventListener('click', function(){
@@ -177,8 +177,36 @@
       }
       
       function showUploadedPhoto(photoURL,photoCategory){
-        let html = `<div class = "grid-item"> <img src="${photoURL}" alt = "${photoCategory}"> </div>`;
-        document.querySelector(`#${photoCategory}Page .grid`).innerHTML += html;
+        // let html = `<div class = "grid-item"> <img src="${photoURL}" alt = "${photoCategory}"> </div>`;
+        // document.querySelector(`#${photoCategory}Page .grid`).innerHTML += html;
+
+        let fragment = document.createDocumentFragment();
+        const img = document.createElement("div");
+        img.className = "grid-item";
+        img.innerHTML = `<img src="${photoURL}" alt = "${photoCategory}"></img>`;
+    
+        console.log(img);
+        var grid = document.querySelectorAll('.grid');
+
+        for (let g of grid){
+          let msnry = new Masonry( g, {
+            // options
+            gutter: 14,
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true
+          });
+
+          document.querySelector(`#${photoCategory}Page .grid`).appendChild(img);
+          // g.appendChild(hmm);
+          msnry.addItems(img);
+          // msnry.layout();
+
+          imagesLoaded(g).on( 'progress', function() {
+            // layout Masonry after each image loads
+            msnry.layout();
+          });
+        }
       }
       
       // This is a good place to write a function that clears out the form.
@@ -204,48 +232,12 @@
             console.error('Error while getting photo', error);
         } 
 
-        let html = '<div class="grid-item grid-item--width2"></div>';
-        document.querySelector(`#shoePage .grid`).innerHTML += html;
-        document.querySelector(`#animalPage .grid`).innerHTML += html;
-        document.querySelector(`#foodPage .grid`).innerHTML += html;
-        document.querySelector(`#naturePage .grid`).innerHTML += html;
-
-        var grid = document.querySelectorAll('.grid');
-
-        for (let g of grid){
-          var msnry = new Masonry( g, {
-            // options
-            itemSelector: '.grid-item',
-            gutter: 13,
-            columnWidth: 170,
-            fitWidth: true,
-          });
-  
-          imagesLoaded( g ).on( 'progress', function() {
-            // layout Masonry after each image loads
-            msnry.layout();
-          });
-        }
-       
-
-
-        // // vanilla JS
-        // var msnry = new Masonry( '.grid', {
-        //   columnWidth: 200
-        // });
-
-        // msnry.imagesLoaded( function() {
-        //   // init Masonry
-        //   msnry.masonry({
-        //     // options...
-        //     itemSelector: '.grid-item',
-        //     gutter: 9,
-        //   });
-        //   // Masonry has been initialized, okay to call methods
-        //   msnry.append( $items )
-        //     .masonry( 'appended', $items );
-        // });
-
+        // let html = '<div class="grid-item grid-item--width2"></div>';
+      
+        // document.querySelector(`#shoePage .grid`).innerHTML += html;
+        // document.querySelector(`#animalPage .grid`).innerHTML += html;
+        // document.querySelector(`#foodPage .grid`).innerHTML += html;
+        // document.querySelector(`#naturePage .grid`).innerHTML += html;
       }
 
       async function convertPhoto(file, category){
