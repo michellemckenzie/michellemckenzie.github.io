@@ -10,13 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
    
     <script src="https://kit.fontawesome.com/9965cbc942.js" crossorigin="anonymous"></script>
-    <!--/ /-------- Load Parse Library --------/ /-->
+
     <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 
-    <!-- Load HEIC/HEIF to JPG conversion  -->
     <script src="https://unpkg.com/convertapi-js/lib/convertapi.js"></script>
 
-     <!--/ /-------- Load Jimp Library --------/ /-->
      <script src="https://unpkg.com/jimp@0.14.0/browser/lib/jimp.js"></script>
     
     <link href="styles.css" rel="stylesheet">
@@ -56,7 +54,7 @@
         </div>
     </section>
 
-    <section id = "uploadPage">
+    <div id = "uploadPage">
         <form id="upload">
             <label for="fileupload"> Upload an image <i class="fa-regular fa-image"></i> </label>
             <input type="file" id="fileupload" accept="image/jpg, image/png, image/heic, image/heif" required>
@@ -76,16 +74,16 @@
         <div id = "loadingScreen">
             <div class="loader"></div>
         </div>    
-    </section>
+    </div>
 
-    <section id = "aboutPage">
+    <div id = "aboutPage">
         <p> &#128075; hi, i'm michelle!</p>
         <p>i'm a senior cs student &#128187; @ uc davis &#128046;</p>
         <p>this project is a way for the community to upload their own personal photos &#128247; to create a collective photo gallery</p>
         <p>our belongings tell a story about ourselves and can create conversation about small slices of our lives</p>
         <p>collections aims to highlight the little pieces that we carry with ourselves and share them in a beautiful display &#127799;</p>
         <p>add your photo! &#128242;</p>
-    </section>
+    </div>
     
     <div id = "shoePage">
         <i class="fa-solid fa-shoe-prints"></i>
