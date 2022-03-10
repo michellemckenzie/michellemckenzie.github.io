@@ -20,8 +20,8 @@
      <script src="https://unpkg.com/jimp@0.14.0/browser/lib/jimp.js"></script>
 
      <!-- load masonry -->
-     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+     <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+     <!-- <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script> -->
     
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
@@ -40,17 +40,6 @@
         <p id = "addOption">add your photo</p>
         <p id = "aboutOption">about</p>
     </div>
-
-    <!-- <div class="grid">
-        <div class="grid-item"><img src = "images/birks.jpg" alt = "shoes"></div>
-        <div class="grid-item"><img src = "images/nike.jpg" alt = "shoes"></div>
-        <div class="grid-item"><img src = "images/blunnies.jpg" alt = "shoes"></div>
-        <div class="grid-item"><img src = "images/sandals.jpg" alt = "shoes"></div>
-        <div class="grid-item"><img src = "images/boots.jpg" alt = "shoes"></div>
-        <div class="grid-item"><img src = "images/shoes.jpg" alt = "shoes"></div>
-
-        <div class="grid-item grid-item--width2"></div>
-      </div> -->
     
     <section id = "mainPage">
         <div id = "shoes">
@@ -83,26 +72,14 @@
                 <option value="food">food</option>
                 <option value="nature">nature</option>
             </select>
-<!-- 
-            <label for="name">Your Name </label>
-            <input type="text" id="name" required>
-
-            <label for="description">Add a caption (optional) </label>
-            <textarea id="description" cols = "5" rows = "6"></textarea> -->
 
             <input type="submit" value="submit" id = "submit">
-
-            <div id="resized-img"><img src=""></div>
-            <div id="square-img"><img src=""></div>
             
         </form>
         
         <div id = "loadingScreen">
             <div class="loader"></div>
-        </div>
-
-       
-
+        </div>    
     </section>
 
     <section id = "aboutPage">
@@ -117,31 +94,22 @@
     <div id = "shoePage">
         <i class="fa-solid fa-shoe-prints"></i>
         <h2>shoes</h2>
-
-        <div class="grid">
-            <div class="grid-sizer"></div>
-        </div>
+        <div class="grid"></div>
     </div>
     <div id = "foodPage">
         <i class="fa-solid fa-utensils"></i>
         <h2>food</h2>
-        <div class="grid">
-            <div class="grid-sizer"></div>
-        </div>
+        <div class="grid"></div>
     </div>
     <div id = "animalPage">
         <i class="fa-solid fa-paw"></i>
         <h2>animal</h2>
-        <div class="grid">
-            <div class="grid-sizer"></div>
-        </div>
+        <div class="grid"></div>
     </div>
     <div id = "naturePage">
         <i class="fa-solid fa-seedling"></i>
         <h2>nature</h2>
-        <div class="grid">
-            <div class="grid-sizer"></div>
-        </div>
+        <div class="grid"></div>
     </div>
 </body>
 </html>

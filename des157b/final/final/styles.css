@@ -13,7 +13,6 @@ header div{
     padding-left: 5vw;
     padding-right: 5vw;
     box-sizing: border-box;
-    /* position: absolute; */
 }
 
 .images{
@@ -30,7 +29,6 @@ header div{
 
 
 header{
-    /* width: 100vw; */
     height: auto;
     display: flex;
     align-items: center;
@@ -47,7 +45,6 @@ header{
     z-index: 2;
     width: 40vw;
     height: 100vh;
-    /* background-color: aqua; */
     background-color: rgb(253, 249, 249);
     position: fixed;
     top:0;
@@ -82,7 +79,6 @@ header{
 
 section h2{
     margin:0;
-    /* text-decoration: underline; */
     color: white;
     background-color: rgba(20, 20, 20, 0.336);
     border-top-left-radius: 15px;
@@ -96,7 +92,6 @@ h2{
 
 #uploadPage{
     padding-left: 5vw;
-    /* background-color: aqua; */
     display: none;
 }
 
@@ -129,7 +124,6 @@ form{
     width: 80vw;
     box-sizing:content-box;
     padding: 5vw;
-    /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
 }
@@ -148,8 +142,8 @@ form{
 }
 
 .loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -186,28 +180,30 @@ form{
       visibility: hidden;
   }
 
+  .grid{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: 1fr auto 1fr;
+      column-gap: 5px;
 
-  
-    .grid-sizer,
-    .grid-item {
-        width: 45%;
-    }
+  }
+
+  .grid-item img{
+    
+  }
 
     .grid-item{
-        /* float: left; */
+        align-self: center ;
     }
 
     .grid-item img{
-        /* display: block; */
         max-width: 100%;
     }
 
 
   #shoes, #animals, #food, #nature{
-      /* background-color: #3498db; */
       height: 20vh;
       border-radius: 15px;
-      /* padding-left: 15px; */
       margin-bottom: 20px;
   }
 

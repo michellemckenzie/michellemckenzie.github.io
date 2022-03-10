@@ -114,7 +114,6 @@
             let file = fileUploadControl.files[0];
             let fileName = fileUploadControl.files[0].name;
             const type = fileUploadControl.files[0].type;
-            // const size = fileUploadControl.files[0].size;
             const category = selectedCategory.value;
 
             if (type == "image/heic" || type == "image/heif"){
@@ -123,7 +122,6 @@
             else{
               const fileAsDataURL = window.URL.createObjectURL(file);
               handleImg(fileAsDataURL, category, fileName);
-              // uploadPhoto(name, file, description, fileName, category, convertedImg);
             }
         } 
     });
@@ -143,7 +141,6 @@
 
       //This is a good place to save data from the other fields to the database
       try {
-        
         loadingScreen.style.display = 'flex';
         const result = await photo.save();
         console.log(result.id);
@@ -167,46 +164,30 @@
           const results = await query.find();
           const photoURL = results[0].get('image').url();
           let photoCategory = results[0].get('category');
-          // This is a good place to get data from the database fields
-          showUploadedPhoto(photoURL, photoCategory);
+          
+          const newNode = document.createElement("div");
+          newNode.className = "grid-item";
+          newNode.innerHTML = `<img src="${photoURL}" alt = "${photoCategory}">`;
+
+          let page = document.querySelector(`#${photoCategory}Page .grid`);
+          page.insertBefore(newNode,page.children[0]);
+
           // This is a good place to run a function that clears out the form, which you will write below.
           clearForm();
+
+          shoePage = document.getElementById('shoePage');
+          foodPage = document.getElementById('foodPage');
+          animalPage = document.getElementById('animalPage');
+          naturePage = document.getElementById('naturePage');
+          pages = [shoePage, animalPage, foodPage, naturePage];
         } catch (error) {
             console.error('Error while getting photo', error);
         } 
       }
       
       function showUploadedPhoto(photoURL,photoCategory){
-        // let html = `<div class = "grid-item"> <img src="${photoURL}" alt = "${photoCategory}"> </div>`;
-        // document.querySelector(`#${photoCategory}Page .grid`).innerHTML += html;
-
-        let fragment = document.createDocumentFragment();
-        const img = document.createElement("div");
-        img.className = "grid-item";
-        img.innerHTML = `<img src="${photoURL}" alt = "${photoCategory}"></img>`;
-    
-        console.log(img);
-        var grid = document.querySelectorAll('.grid');
-
-        for (let g of grid){
-          let msnry = new Masonry( g, {
-            // options
-            gutter: 14,
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',
-            percentPosition: true
-          });
-
-          document.querySelector(`#${photoCategory}Page .grid`).appendChild(img);
-          // g.appendChild(hmm);
-          msnry.addItems(img);
-          // msnry.layout();
-
-          imagesLoaded(g).on( 'progress', function() {
-            // layout Masonry after each image loads
-            msnry.layout();
-          });
-        }
+        let html = `<div class = "grid-item"> <img src="${photoURL}" alt = "${photoCategory}"> </div>`;
+        document.querySelector(`#${photoCategory}Page .grid`).innerHTML += html;    
       }
       
       // This is a good place to write a function that clears out the form.
@@ -231,13 +212,6 @@
         } catch (error) {
             console.error('Error while getting photo', error);
         } 
-
-        // let html = '<div class="grid-item grid-item--width2"></div>';
-      
-        // document.querySelector(`#shoePage .grid`).innerHTML += html;
-        // document.querySelector(`#animalPage .grid`).innerHTML += html;
-        // document.querySelector(`#foodPage .grid`).innerHTML += html;
-        // document.querySelector(`#naturePage .grid`).innerHTML += html;
       }
 
       async function convertPhoto(file, category){
@@ -252,7 +226,6 @@
         let url = result.files[0];
 
         handleImg(url.Url, category, url.FileName);
-      //  uploadPhoto("michelle", url.Url, "my desc", url.FileName, "dog", convertedImg);
       }
 
       async function handleImg(imageUrl, category, filename){
@@ -310,17 +283,5 @@
         });
         return newImg;
       }
-
-      // window.onload = () => {
-      //   var elem = document.querySelector('.grid');
-      //   var msnry = new Masonry( elem, {
-      //     // options
-      //     itemSelector: '.grid-item',
-      //     gutter: 11,
-      //   });
-      // }
-    
-
-      
 
 })();
