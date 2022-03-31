@@ -1,0 +1,256 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat";
+    overflow-x: hidden;
+}
+
+header div{
+    overflow-x: hidden;
+}
+
+#mainPage{
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+}
+
+.images{
+    height: 23vh;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    justify-content: space-between;
+}
+
+.images img{
+    margin-right: 5vw;
+}
+
+
+header{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top:0;
+    left:0;
+    background-color: white;
+    z-index: 1;
+}
+
+
+#menu{
+    z-index: 2;
+    width: 40vw;
+    height: 100vh;
+    background-color: rgb(253, 249, 249);
+    position: fixed;
+    top:0;
+    right:0;
+
+    box-sizing: border-box;
+    padding: 15vw 5vw;
+    
+    
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(40vw);
+    transition: transform .8s;
+}
+
+#menu.show{
+    transform: translateX(0);
+}
+
+
+#menuOptions p{
+    display: inline-block;
+}
+
+.fa-solid.fa-xmark{
+    position: absolute;
+    top: 4vh;
+    right:9vw;
+}
+
+
+section h2{
+    margin:0;
+    color: white;
+    background-color: rgba(20, 20, 20, 0.336);
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
+}
+
+h2{
+    display: inline-block;
+}
+
+#uploadPage{
+    padding-left: 5vw;
+    display: none;
+}
+
+
+label, textarea{
+    display: block;
+    margin-bottom: 1vh;
+}
+
+input, select{
+    margin-bottom: 3vh;
+    display: block;
+}
+
+#homeOption:hover, #addOption:hover, #aboutOption:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+#name, select{
+    padding: 7px;
+}
+
+select{
+    width: 130px;
+}
+
+form{
+    width: 80vw;
+    box-sizing:content-box;
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#submit{
+    align-items: center;
+    width: 30vw;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 0;
+}
+
+#aboutPage{
+    display: none;
+    padding: 25px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #loadingScreen{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(26, 25, 25, 0.356);
+      display: none;
+  }
+
+  section section{
+      margin-bottom: 20px;
+  }
+
+  #shoePage, #foodPage, #animalPage, #naturePage{
+      display: none;
+      padding: 5vw;
+  }
+
+  .fa-solid.fa-angle-left{
+      visibility: hidden;
+  }
+
+  /* .grid{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: 1fr auto 1fr;
+      column-gap: 5px;
+
+  }
+
+    .grid-item{
+        align-self: center ;
+    }
+
+    .grid-item img{
+        max-width: 100%;
+    } */
+
+    /* .grid-item, .grid-sizer{
+        width: 20%;
+    } */
+
+    .grid {
+        background: #DDD;
+      }
+      
+      /* clear fix */
+      .grid:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      
+      /* ---- .grid-item ---- */
+      
+      .grid-sizer,
+      .grid-item {
+        width: 48%;
+        margin-bottom: 10px;
+      }
+      
+      /* .grid-item {
+        float: left;
+      } */
+      
+      .grid-item img {
+        display: block;
+        max-width: 100%;
+      }
+      
+
+  #shoes, #animals, #food, #nature{
+      height: 20vh;
+      border-radius: 15px;
+      margin-bottom: 20px;
+  }
+
+  #shoePage h2, #animalPage h2, #foodPage h2, #naturePage h2{
+      margin-left: 10px;
+}
+
+  #shoes{
+    background-image: url("images/shoeThumbnail.jpg");
+  }
+
+  #animals{
+    background-image: url("images/animalThumbnail.jpg");
+  }
+
+  #food{
+    background-image: url("images/foodThumbnail.jpg");
+  }
+
+  #nature{
+    background-image: url("images/natureThumbnail.jpg");
+  }

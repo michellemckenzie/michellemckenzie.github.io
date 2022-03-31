@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+
+    margin-top: 3vh;
+}
+
+
+#container{
+    width: 90vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(4,20%);
+    column-gap: 5%;
+    row-gap: 5%;
+}
+
+img{
+    height:40vh;
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
