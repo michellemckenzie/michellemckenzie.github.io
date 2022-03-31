@@ -4,3 +4,32 @@ img {
     top: 0;
     left: 0;
 }
+
+h1 {
+    font-family: 'Fraunces';
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+h2{
+    font-family: 'Fraunces';
+    font-weight: 700;
+    text-align: center;
+}
+
+.section p{
+    font-family: 'Barlow';
+    font-weight: 600;
+    font-size: 18px;
+    color: gray;
+    line-height: 1.6em;
+    text-align: center;
+    margin-bottom: 5vh;
+} 
+
+.section div{
+    margin-top: 30vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
