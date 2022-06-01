@@ -51,9 +51,9 @@
         <div id = "interactive">
             <div id = 'userInput'>
                 <p>User Input</p>
-                <form>
+                <form action = "{{url_for("input")}}" method = "post">
                     <label for = "userSentence">Enter a sentence to begin running the model:</label>
-                    <input type = "text" id = "userSentence">
+                    <input type = "text" id = "userSentence" name = "sentence">
                     <input type="submit" id = "submit" value="Submit">
                 </form>
             </div>

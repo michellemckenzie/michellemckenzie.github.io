@@ -62,7 +62,7 @@ h1, h2{
 }
 
 input{
-    width: 360px;
+    width: 20vw;
     height: 20px;
     border-style: none;
 }
