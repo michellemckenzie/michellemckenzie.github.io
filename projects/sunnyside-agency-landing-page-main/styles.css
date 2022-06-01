@@ -30,7 +30,7 @@ h2{
 
 .section div{
     position: relative;
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
     margin-left: 10vw;
     margin-right: 10vw;
 }
