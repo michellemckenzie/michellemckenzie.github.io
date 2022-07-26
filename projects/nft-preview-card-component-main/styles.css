@@ -147,4 +147,13 @@ h1:hover, #creator span:hover {
         width: 25vw;
         padding: 2%;
     }
+
+    #card p {
+        font-size: 18px;
+    }
+
+    #time p {
+        /* keep the words on one line */
+        white-space: nowrap;
+    }
 }
