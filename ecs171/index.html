@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <link href = "styles.css" rel="stylesheet">
+    <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
     <div id = 'container'>
@@ -51,10 +52,11 @@
         <div id = "interactive">
             <div id = 'userInput'>
                 <p>User Input</p>
-                <form action = "{{url_for("input")}}" method = "post">
+                <form>
                     <label for = "userSentence">Enter a sentence to begin running the model:</label>
-                    <input type = "text" id = "userSentence" name = "sentence">
-                    <input type="submit" id = "submit" value="Submit">
+                    <input type = "text" id = "userSentence" name = "sentence" required >
+                    <!-- <button id = "submit" onclick="sendReq(document.getElementById('userSentence').value)">Submit</button> -->
+                    <input type="submit" id = "submit" value="Submit" onclick="sendReq(document.getElementById('userSentence').value)">
                 </form>
             </div>
 
@@ -78,6 +80,10 @@
 
         </div>
         
+
+        <div>
+            <input id="AnswerText" type="text" readonly/>
+        </div>
 
    
     </div>

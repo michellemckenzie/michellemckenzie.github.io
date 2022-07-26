@@ -1,0 +1,119 @@
+body {
+    background-color: hsl(217, 54%, 11%);
+    color: white;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Outfit';
+}
+
+#card {
+    width: 85vw;
+    height: auto;
+    background-color: hsl(216, 50%, 16%);
+    box-sizing:border-box;
+
+    padding: 6%;
+
+    border-radius: 15px;
+
+    color: hsl(215, 51%, 70%);
+}
+
+#nft {
+    width: 100%;
+    border-radius: 10px;
+    vertical-align: bottom;
+    display: block;
+}
+
+#summary {
+    line-height: 1.7em;
+}
+
+#info, #info div, #creator {
+    display: flex;
+    flex: row;
+}
+
+#info {
+    width: 100%;
+    justify-content: space-between;
+}
+
+#info div {
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#info div img {
+    height: 30%;
+    margin-right: 10px;
+}
+
+#price p {
+    color: hsl(178, 100%, 50%);
+}
+
+hr {
+    border: none;
+    background-color: hsl(215, 51%, 70%);
+    height: 1px;
+}
+
+#creator {
+    align-items: center;
+}
+
+#creator img{
+    width: 12%;
+    height: 12%;
+    border: 2px solid white;
+    border-radius: 50px;
+
+    margin-right: 20px;
+}
+
+h1, #creator span {
+    color: white;
+}
+
+h1:hover, #creator span:hover {
+    color:hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+
+#art {
+    position: relative;
+}
+
+#nftHover{
+    display: none;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-color: hsla(178, 100%, 50%, 0.373);
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+#nftHover img{
+    height: 15%;
+}
+
+#art:hover #nftHover {
+    display: flex;
+}

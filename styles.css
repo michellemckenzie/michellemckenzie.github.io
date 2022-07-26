@@ -1,0 +1,31 @@
+body {
+    font-family: 'Roboto';
+    padding: 2% 15% 5% 15%;
+}
+
+nav {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+i {
+    font-size: 50px;
+}
+
+#skills, #learning{
+    display: flex;
+    justify-content: space-between;
+}
+
+#skills div, #learning div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
